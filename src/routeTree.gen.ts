@@ -9,40 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as StoryRouteImport } from './routes/story'
-import { Route as ReservationsRouteImport } from './routes/reservations'
-import { Route as PrivateDiningRouteImport } from './routes/private-dining'
-import { Route as MenuRouteImport } from './routes/menu'
-import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 
-const StoryRoute = StoryRouteImport.update({
-  id: '/story',
-  path: '/story',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ReservationsRoute = ReservationsRouteImport.update({
-  id: '/reservations',
-  path: '/reservations',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivateDiningRoute = PrivateDiningRouteImport.update({
-  id: '/private-dining',
-  path: '/private-dining',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MenuRoute = MenuRouteImport.update({
-  id: '/menu',
-  path: '/menu',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const EventsRoute = EventsRouteImport.update({
   id: '/events',
   path: '/events',
@@ -63,114 +33,34 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
-  '/gallery': typeof GalleryRoute
-  '/menu': typeof MenuRoute
-  '/private-dining': typeof PrivateDiningRoute
-  '/reservations': typeof ReservationsRoute
-  '/story': typeof StoryRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
-  '/gallery': typeof GalleryRoute
-  '/menu': typeof MenuRoute
-  '/private-dining': typeof PrivateDiningRoute
-  '/reservations': typeof ReservationsRoute
-  '/story': typeof StoryRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
-  '/gallery': typeof GalleryRoute
-  '/menu': typeof MenuRoute
-  '/private-dining': typeof PrivateDiningRoute
-  '/reservations': typeof ReservationsRoute
-  '/story': typeof StoryRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths:
-    | '/'
-    | '/contact'
-    | '/events'
-    | '/gallery'
-    | '/menu'
-    | '/private-dining'
-    | '/reservations'
-    | '/story'
+  fullPaths: '/' | '/contact' | '/events'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/contact'
-    | '/events'
-    | '/gallery'
-    | '/menu'
-    | '/private-dining'
-    | '/reservations'
-    | '/story'
-  id:
-    | '__root__'
-    | '/'
-    | '/contact'
-    | '/events'
-    | '/gallery'
-    | '/menu'
-    | '/private-dining'
-    | '/reservations'
-    | '/story'
+  to: '/' | '/contact' | '/events'
+  id: '__root__' | '/' | '/contact' | '/events'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRoute
-  GalleryRoute: typeof GalleryRoute
-  MenuRoute: typeof MenuRoute
-  PrivateDiningRoute: typeof PrivateDiningRoute
-  ReservationsRoute: typeof ReservationsRoute
-  StoryRoute: typeof StoryRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/story': {
-      id: '/story'
-      path: '/story'
-      fullPath: '/story'
-      preLoaderRoute: typeof StoryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/reservations': {
-      id: '/reservations'
-      path: '/reservations'
-      fullPath: '/reservations'
-      preLoaderRoute: typeof ReservationsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/private-dining': {
-      id: '/private-dining'
-      path: '/private-dining'
-      fullPath: '/private-dining'
-      preLoaderRoute: typeof PrivateDiningRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/menu': {
-      id: '/menu'
-      path: '/menu'
-      fullPath: '/menu'
-      preLoaderRoute: typeof MenuRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/events': {
       id: '/events'
       path: '/events'
@@ -199,11 +89,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
   EventsRoute: EventsRoute,
-  GalleryRoute: GalleryRoute,
-  MenuRoute: MenuRoute,
-  PrivateDiningRoute: PrivateDiningRoute,
-  ReservationsRoute: ReservationsRoute,
-  StoryRoute: StoryRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

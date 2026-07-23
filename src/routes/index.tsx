@@ -1,38 +1,49 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Quote } from "lucide-react";
-import heroImg from "../assets/hero-interior.jpg";
-import cocktail1 from "../assets/cocktail-1.jpg";
-import cocktail2 from "../assets/cocktail-2.jpg";
-import cocktail3 from "../assets/cocktail-3.jpg";
-import dish1 from "../assets/dish-1.jpg";
-import bartenderImg from "../assets/bartender.jpg";
-import booksImg from "../assets/books.jpg";
-import eventJazz from "../assets/event-jazz.jpg";
-import privateImg from "../assets/private-dining.jpg";
+import { ArrowRight, BookOpen, Users, Calendar, Heart, Quote } from "lucide-react";
+import heroImg from "../assets/hero-library.jpg";
+import childrenImg from "../assets/children-corner.jpg";
+import readingRoomImg from "../assets/reading-room.jpg";
+import storytimeImg from "../assets/event-storytime.jpg";
+import shelvesImg from "../assets/shelves.jpg";
+import librarianImg from "../assets/librarian-portrait.jpg";
 import { PageShell } from "../components/PageShell";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Old Library — Literary Cocktail Salon, Dubai" },
-      { name: "description", content: "A dim-lit literary sanctuary in Dubai. Signature cocktails, seasonal kitchen, live jazz nightly. Reserve your chapter." },
-      { property: "og:title", content: "The Old Library — Literary Cocktail Salon" },
-      { property: "og:description", content: "Where every cocktail begins with a story." },
+      { title: "The Old Library — Family Lending Library, Dubai" },
+      { name: "description", content: "A community lending library in Dubai for readers of every age. Browse the catalogue, join for a year, or drop in for storytime." },
+      { property: "og:title", content: "The Old Library — Family Lending Library" },
+      { property: "og:description", content: "Where every family finds their next story." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Home,
 });
 
-const cocktails = [
-  { name: "The Hemingway", note: "Rum · Grapefruit · Maraschino", img: cocktail1 },
-  { name: "Fitzgerald's Fold", note: "Rye · Smoked Bitters · Orange", img: cocktail2 },
-  { name: "Kerouac Green", note: "Gin · Chartreuse · Sage", img: cocktail3 },
+const newArrivals = [
+  { title: "The Wandering Ink", author: "Nadia Al-Shami", cat: "Fiction", img: shelvesImg },
+  { title: "Small Songs for Small People", author: "Idris Yusuf", cat: "Picture Book", img: childrenImg },
+  { title: "A History of Quiet Rooms", author: "Marion Ellwood", cat: "Non-fiction", img: readingRoomImg },
+  { title: "The Cartographer's Daughter", author: "Rania Kassab", cat: "Young Adult", img: librarianImg },
+];
+
+const collections = [
+  "Children",
+  "Young Adult",
+  "Fiction",
+  "Non-fiction",
+  "Reference",
+  "Local History",
+  "Arabic Language",
+  "Audiobooks",
 ];
 
 const events = [
-  { date: "24", month: "Jul", title: "Late Night Jazz Quartet", tag: "Live Music" },
-  { date: "31", month: "Jul", title: "Spoken Word: Summer Editions", tag: "Poetry" },
-  { date: "07", month: "Aug", title: "Vinyl Nights with DJ Sable", tag: "DJ Set" },
+  { date: "26", month: "Jul", title: "Saturday Storytime for Under-Sevens", tag: "Kids · All welcome" },
+  { date: "02", month: "Aug", title: "Book Club: Piranesi by Susanna Clarke", tag: "Adults · Members" },
+  { date: "09", month: "Aug", title: "Author Visit — Reem Al-Kamali", tag: "All ages" },
 ];
 
 function Home() {
@@ -42,7 +53,7 @@ function Home() {
       <section className="relative h-screen min-h-[720px] overflow-hidden">
         <img
           src={heroImg}
-          alt="The Old Library dim interior"
+          alt="Inside The Old Library"
           width={1920}
           height={1280}
           className="absolute inset-0 h-full w-full object-cover"
@@ -52,27 +63,27 @@ function Home() {
         <div className="relative h-full flex flex-col justify-end pb-24 px-6">
           <div className="mx-auto max-w-6xl w-full">
             <div className="max-w-3xl">
-              <div className="eyebrow mb-6 text-gold">Since 2014 · Dubai</div>
+              <div className="eyebrow mb-6 text-gold">Est. 2014 · Jumeirah, Dubai</div>
               <h1 className="display text-cream text-6xl md:text-8xl lg:text-9xl">
-                Where stories<br />
-                <em className="text-gold not-italic font-light">are poured.</em>
+                Where every family<br />
+                <em className="text-gold not-italic font-light">finds their story.</em>
               </h1>
               <p className="mt-8 text-cream/75 max-w-xl text-lg leading-relaxed font-light">
-                A dim-lit literary salon of cocktails, kitchen, and slow conversation —
-                shelved between the pages of another world.
+                A community lending library of thirty-two thousand books —
+                open to readers of every age, curated by hand, borrowed with love.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
-                  to="/reservations"
+                  to="/catalogue"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-emerald-deep hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium transition-colors"
                 >
-                  Reserve a table <ArrowRight size={14} />
+                  Browse the catalogue <ArrowRight size={14} />
                 </Link>
                 <Link
-                  to="/menu"
+                  to="/membership"
                   className="inline-flex items-center gap-3 px-8 py-4 border border-cream/40 text-cream hover:border-gold hover:text-gold text-xs tracking-[0.25em] uppercase transition-colors"
                 >
-                  Explore the menu
+                  Become a member
                 </Link>
               </div>
             </div>
@@ -93,16 +104,17 @@ function Home() {
           </div>
           <div className="md:col-span-8">
             <p className="display text-3xl md:text-4xl text-ink leading-tight">
-              <span className="float-left font-serif text-7xl leading-[0.8] pr-3 pt-2 text-gold">A</span>
-              hidden salon behind a shelf of first editions — The Old Library was
-              built for the long conversation. Twelve years on, our bartenders still
-              write recipes like short stories, and our kitchen still plates them
-              like poetry.
+              <span className="float-left font-serif text-7xl leading-[0.8] pr-3 pt-2 text-gold">B</span>
+              built by one family, kept by many. The Old Library began as a
+              front-room bookshelf shared with the neighbourhood — twelve years
+              on, we lend across four rooms, one garden, and a Saturday storytime
+              that has raised a whole generation of readers.
             </p>
             <div className="mt-10 flex items-start gap-4 text-muted-foreground">
               <Quote className="text-gold shrink-0 mt-1" size={20} />
               <p className="italic font-serif text-lg">
-                "The best bar in Dubai for people who read the menu twice."
+                "The kindest library in the city — and the only one where my
+                four-year-old asks to go on a Saturday morning."
                 <span className="not-italic text-xs tracking-[0.2em] uppercase text-gold/80 block mt-2">
                   — Time Out Dubai
                 </span>
@@ -112,36 +124,39 @@ function Home() {
         </div>
       </section>
 
-      {/* SIGNATURE COCKTAILS */}
+      {/* NEW ARRIVALS */}
       <section className="bg-emerald-deep text-cream py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
               <div className="eyebrow">Chapter II</div>
-              <h2 className="display text-5xl md:text-6xl text-cream mt-4">Signature Pours</h2>
+              <h2 className="display text-5xl md:text-6xl text-cream mt-4">New on the Shelves</h2>
             </div>
-            <Link to="/menu" className="text-gold hover:text-gold-soft text-xs tracking-[0.25em] uppercase flex items-center gap-2">
-              Full list <ArrowRight size={14} />
+            <Link to="/catalogue" className="text-gold hover:text-gold-soft text-xs tracking-[0.25em] uppercase flex items-center gap-2">
+              Full catalogue <ArrowRight size={14} />
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {cocktails.map((c, i) => (
-              <article key={c.name} className="group">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {newArrivals.map((b, i) => (
+              <article key={b.title} className="group">
                 <div className="arched aspect-[3/4] overflow-hidden gold-frame bg-emerald">
                   <img
-                    src={c.img}
-                    alt={c.name}
+                    src={b.img}
+                    alt={b.title}
                     loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="mt-6 text-center">
                   <div className="text-gold/70 text-xs tracking-[0.3em] uppercase">
-                    №&nbsp;{String(i + 1).padStart(2, "0")}
+                    №&nbsp;{String(i + 1).padStart(2, "0")} · {b.cat}
                   </div>
-                  <h3 className="font-serif text-3xl mt-2 text-cream">{c.name}</h3>
-                  <p className="text-cream/60 text-sm mt-2">{c.note}</p>
+                  <h3 className="font-serif text-2xl mt-2 text-cream">{b.title}</h3>
+                  <p className="text-cream/60 text-sm mt-1 italic">{b.author}</p>
+                  <div className="mt-3 text-[0.65rem] tracking-[0.25em] uppercase text-gold">
+                    Available
+                  </div>
                 </div>
               </article>
             ))}
@@ -149,32 +164,53 @@ function Home() {
         </div>
       </section>
 
-      {/* MENU SPLIT */}
+      {/* COLLECTIONS */}
+      <section className="bg-cream py-24 px-6 border-y border-gold/20">
+        <div className="mx-auto max-w-6xl text-center">
+          <div className="eyebrow">Our Collections</div>
+          <h2 className="display text-4xl md:text-5xl mt-4">Eight rooms of reading</h2>
+          <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-4">
+            {collections.map((c) => (
+              <Link
+                key={c}
+                to="/catalogue"
+                className="font-serif text-xl md:text-2xl text-emerald-deep hover:text-gold border-b border-transparent hover:border-gold pb-1 transition-colors"
+              >
+                {c}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TWO IMAGES SPLIT */}
       <section className="bg-cream py-32 px-6">
         <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-12">
           <div className="relative">
-            <img src={dish1} alt="Kitchen" width={1200} height={900} loading="lazy" className="w-full aspect-[4/5] object-cover" />
+            <img src={childrenImg} alt="Children's corner" width={1200} height={1500} loading="lazy" className="w-full aspect-[4/5] object-cover" />
             <div className="absolute bottom-0 left-0 bg-cream p-8 max-w-sm">
-              <div className="eyebrow">The Kitchen</div>
-              <h3 className="display text-3xl mt-3">Small plates, long dinners</h3>
+              <div className="eyebrow">The Little Room</div>
+              <h3 className="display text-3xl mt-3">Little readers, big worlds</h3>
               <p className="mt-3 text-sm text-muted-foreground">
-                Seasonal Mediterranean plates from Chef Amir, designed to be shared over hours.
+                Six thousand picture books, chapter books, and early readers —
+                sorted by age, not by algorithm.
               </p>
-              <Link to="/menu" className="mt-5 inline-flex items-center gap-2 text-emerald-deep border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
-                Read the menu <ArrowRight size={12} />
+              <Link to="/catalogue" className="mt-5 inline-flex items-center gap-2 text-emerald-deep border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
+                Browse children's <ArrowRight size={12} />
               </Link>
             </div>
           </div>
           <div className="relative md:mt-24">
-            <img src={bartenderImg} alt="Bar" width={1200} height={1400} loading="lazy" className="w-full aspect-[4/5] object-cover" />
+            <img src={readingRoomImg} alt="Reading room" width={1600} height={1200} loading="lazy" className="w-full aspect-[4/5] object-cover" />
             <div className="absolute bottom-0 right-0 bg-cream p-8 max-w-sm">
-              <div className="eyebrow">The Bar</div>
-              <h3 className="display text-3xl mt-3">Recipes as short stories</h3>
+              <div className="eyebrow">The Reading Room</div>
+              <h3 className="display text-3xl mt-3">A quiet place to sit</h3>
               <p className="mt-3 text-sm text-muted-foreground">
-                Forty pours across five volumes — the Classics, the Reprints, the Manuscripts, the Blind Editions, and the Nightcaps.
+                Long tables, brass lamps, free wifi, and enough silence to
+                finish a chapter. Members welcome any hour we are open.
               </p>
-              <Link to="/menu" className="mt-5 inline-flex items-center gap-2 text-emerald-deep border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
-                Turn the page <ArrowRight size={12} />
+              <Link to="/membership" className="mt-5 inline-flex items-center gap-2 text-emerald-deep border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
+                Join to visit <ArrowRight size={12} />
               </Link>
             </div>
           </div>
@@ -187,7 +223,7 @@ function Home() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
               <div className="eyebrow">Chapter III</div>
-              <h2 className="display text-5xl md:text-6xl mt-4 text-cream">Live at the Library</h2>
+              <h2 className="display text-5xl md:text-6xl mt-4 text-cream">This Month at the Library</h2>
             </div>
             <Link to="/events" className="text-gold hover:text-gold-soft text-xs tracking-[0.25em] uppercase flex items-center gap-2">
               All events <ArrowRight size={14} />
@@ -204,7 +240,7 @@ function Home() {
                 <div className="eyebrow mt-8">{e.tag}</div>
                 <h3 className="font-serif text-2xl mt-3 text-cream">{e.title}</h3>
                 <div className="mt-6 text-xs tracking-[0.25em] uppercase text-cream/50 group-hover:text-gold transition-colors">
-                  9:30 pm · Free entry
+                  Free with membership
                 </div>
               </div>
             ))}
@@ -212,52 +248,64 @@ function Home() {
         </div>
       </section>
 
-      {/* PRESS MARQUEE */}
-      <section className="bg-cream py-16 border-y border-border overflow-hidden">
-        <div className="flex items-center justify-around flex-wrap gap-x-16 gap-y-6 opacity-70 max-w-7xl mx-auto px-6">
-          {["TIME OUT", "CONDÉ NAST", "ESQUIRE", "GQ MIDDLE EAST", "GAULT&MILLAU", "50 BEST BARS"].map((p) => (
-            <span key={p} className="font-serif italic text-xl text-emerald-deep tracking-widest">
-              {p}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* GALLERY */}
-      <section className="bg-cream py-32 px-6">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-16">
-            <div className="eyebrow">Chapter IV</div>
-            <h2 className="display text-5xl md:text-6xl mt-4">Between the Shelves</h2>
+      {/* MEMBERSHIP CTA BAND */}
+      <section className="relative py-32 px-6 overflow-hidden">
+        <img src={storytimeImg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-emerald-deep/88" />
+        <div className="relative mx-auto max-w-5xl grid md:grid-cols-2 gap-16 items-center">
+          <div>
+            <div className="eyebrow text-gold">Membership</div>
+            <h2 className="display text-5xl md:text-6xl text-cream mt-6">
+              Borrow up to <em className="text-gold not-italic">eight books</em> at a time.
+            </h2>
+            <p className="mt-6 text-cream/75 max-w-md">
+              A single annual family membership covers every reader under one
+              roof — plus event access, reserved study time, and a monthly
+              hand-picked reading list.
+            </p>
+            <Link
+              to="/membership"
+              className="mt-10 inline-flex items-center gap-3 px-8 py-4 bg-gold text-emerald-deep hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium"
+            >
+              See membership tiers <ArrowRight size={14} />
+            </Link>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[heroImg, cocktail2, dish1, booksImg, cocktail3, eventJazz, bartenderImg, privateImg].map((src, i) => (
-              <div key={i} className={`overflow-hidden ${i === 0 || i === 5 ? "row-span-2 aspect-[3/4]" : "aspect-square"}`}>
-                <img src={src} alt="" loading="lazy" className="w-full h-full object-cover hover:scale-110 transition-transform duration-700" />
-              </div>
+          <ul className="space-y-6 text-cream">
+            {[
+              { icon: BookOpen, label: "32,000 books", note: "across eight collections" },
+              { icon: Users, label: "Family membership", note: "one card for every reader in the household" },
+              { icon: Calendar, label: "40+ events a year", note: "storytimes, book clubs, author visits" },
+              { icon: Heart, label: "Non-profit", note: "run by volunteers, supported by members" },
+            ].map(({ icon: Icon, label, note }) => (
+              <li key={label} className="flex items-start gap-4 border-b border-gold/20 pb-6">
+                <Icon className="text-gold shrink-0 mt-1" size={20} />
+                <div>
+                  <div className="font-serif text-xl">{label}</div>
+                  <div className="text-cream/60 text-sm mt-1">{note}</div>
+                </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* RESERVATION CTA */}
-      <section className="relative py-40 px-6 overflow-hidden">
-        <img src={heroImg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-emerald-deep/85" />
-        <div className="relative mx-auto max-w-3xl text-center">
-          <div className="eyebrow text-gold">Epilogue</div>
-          <h2 className="display text-5xl md:text-7xl text-cream mt-6">
-            Reserve your <em className="text-gold not-italic">chapter</em>
+      {/* SUPPORT TEASER */}
+      <section className="bg-cream py-24 px-6">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="eyebrow">Epilogue</div>
+          <h2 className="display text-4xl md:text-5xl mt-6">
+            Every book on our shelves was <em className="text-gold not-italic">given</em>.
           </h2>
-          <p className="mt-6 text-cream/70 max-w-xl mx-auto">
-            Tables released four weeks in advance. Walk-ins welcome at the bar
-            after 10pm on weeknights.
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto">
+            The Old Library runs on donated books, member fees, and volunteer
+            hours. If the library has meant something to your family, there
+            are three good ways to give back.
           </p>
           <Link
-            to="/reservations"
-            className="mt-10 inline-flex items-center gap-3 px-10 py-4 bg-gold text-emerald-deep hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium"
+            to="/support"
+            className="mt-10 inline-flex items-center gap-3 px-8 py-4 border border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-cream text-xs tracking-[0.25em] uppercase transition-colors"
           >
-            Book a table <ArrowRight size={14} />
+            Support the Library <ArrowRight size={14} />
           </Link>
         </div>
       </section>

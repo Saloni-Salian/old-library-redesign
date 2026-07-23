@@ -3,11 +3,11 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { to: "/menu", label: "Menu" },
+  { to: "/catalogue", label: "Catalogue" },
+  { to: "/membership", label: "Membership" },
   { to: "/events", label: "Events" },
-  { to: "/private-dining", label: "Private Dining" },
-  { to: "/gallery", label: "Gallery" },
-  { to: "/story", label: "Story" },
+  { to: "/support", label: "Support" },
+  { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -38,12 +38,12 @@ export function SiteNav() {
           <div className="hidden sm:block">
             <div className="font-serif text-cream text-lg leading-none">The Old Library</div>
             <div className="text-[0.6rem] tracking-[0.3em] text-gold/80 uppercase mt-1">
-              Est · Dubai
+              Family Lending Library
             </div>
           </div>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-7">
           {links.map((l) => (
             <Link
               key={l.to}
@@ -58,10 +58,16 @@ export function SiteNav() {
 
         <div className="flex items-center gap-3">
           <Link
-            to="/reservations"
+            to="/login"
+            className="hidden md:inline-flex text-cream/85 hover:text-gold text-xs tracking-[0.2em] uppercase transition-colors"
+          >
+            Sign in
+          </Link>
+          <Link
+            to="/membership"
             className="hidden md:inline-flex items-center px-5 py-2.5 border border-gold text-gold hover:bg-gold hover:text-emerald-deep text-xs tracking-[0.2em] uppercase transition-colors"
           >
-            Reserve
+            Join
           </Link>
           <button
             aria-label="Menu"
@@ -86,11 +92,18 @@ export function SiteNav() {
             </Link>
           ))}
           <Link
-            to="/reservations"
+            to="/login"
             onClick={() => setOpen(false)}
-            className="block text-gold text-sm tracking-wider uppercase pt-4 border-t border-gold/20"
+            className="block text-cream/80 hover:text-gold text-sm tracking-wider uppercase pt-4 border-t border-gold/20"
           >
-            Reserve a Table
+            Sign in
+          </Link>
+          <Link
+            to="/membership"
+            onClick={() => setOpen(false)}
+            className="block text-gold text-sm tracking-wider uppercase"
+          >
+            Join the Library
           </Link>
         </div>
       )}
