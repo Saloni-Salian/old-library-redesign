@@ -9,38 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as StoryRouteImport } from './routes/story'
-import { Route as ReservationsRouteImport } from './routes/reservations'
-import { Route as PrivateDiningRouteImport } from './routes/private-dining'
-import { Route as MenuRouteImport } from './routes/menu'
-import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as MembershipRouteImport } from './routes/membership'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CatalogueRouteImport } from './routes/catalogue'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
-const StoryRoute = StoryRouteImport.update({
-  id: '/story',
-  path: '/story',
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReservationsRoute = ReservationsRouteImport.update({
-  id: '/reservations',
-  path: '/reservations',
+const MembershipRoute = MembershipRouteImport.update({
+  id: '/membership',
+  path: '/membership',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrivateDiningRoute = PrivateDiningRouteImport.update({
-  id: '/private-dining',
-  path: '/private-dining',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MenuRoute = MenuRouteImport.update({
-  id: '/menu',
-  path: '/menu',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsRoute = EventsRouteImport.update({
@@ -53,6 +43,16 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CatalogueRoute = CatalogueRouteImport.update({
+  id: '/catalogue',
+  path: '/catalogue',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -61,114 +61,100 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
-  '/gallery': typeof GalleryRoute
-  '/menu': typeof MenuRoute
-  '/private-dining': typeof PrivateDiningRoute
-  '/reservations': typeof ReservationsRoute
-  '/story': typeof StoryRoute
+  '/login': typeof LoginRoute
+  '/membership': typeof MembershipRoute
+  '/support': typeof SupportRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
-  '/gallery': typeof GalleryRoute
-  '/menu': typeof MenuRoute
-  '/private-dining': typeof PrivateDiningRoute
-  '/reservations': typeof ReservationsRoute
-  '/story': typeof StoryRoute
+  '/login': typeof LoginRoute
+  '/membership': typeof MembershipRoute
+  '/support': typeof SupportRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/catalogue': typeof CatalogueRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
-  '/gallery': typeof GalleryRoute
-  '/menu': typeof MenuRoute
-  '/private-dining': typeof PrivateDiningRoute
-  '/reservations': typeof ReservationsRoute
-  '/story': typeof StoryRoute
+  '/login': typeof LoginRoute
+  '/membership': typeof MembershipRoute
+  '/support': typeof SupportRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
+    | '/catalogue'
     | '/contact'
     | '/events'
-    | '/gallery'
-    | '/menu'
-    | '/private-dining'
-    | '/reservations'
-    | '/story'
+    | '/login'
+    | '/membership'
+    | '/support'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
+    | '/catalogue'
     | '/contact'
     | '/events'
-    | '/gallery'
-    | '/menu'
-    | '/private-dining'
-    | '/reservations'
-    | '/story'
+    | '/login'
+    | '/membership'
+    | '/support'
   id:
     | '__root__'
     | '/'
+    | '/about'
+    | '/catalogue'
     | '/contact'
     | '/events'
-    | '/gallery'
-    | '/menu'
-    | '/private-dining'
-    | '/reservations'
-    | '/story'
+    | '/login'
+    | '/membership'
+    | '/support'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  CatalogueRoute: typeof CatalogueRoute
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRoute
-  GalleryRoute: typeof GalleryRoute
-  MenuRoute: typeof MenuRoute
-  PrivateDiningRoute: typeof PrivateDiningRoute
-  ReservationsRoute: typeof ReservationsRoute
-  StoryRoute: typeof StoryRoute
+  LoginRoute: typeof LoginRoute
+  MembershipRoute: typeof MembershipRoute
+  SupportRoute: typeof SupportRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/story': {
-      id: '/story'
-      path: '/story'
-      fullPath: '/story'
-      preLoaderRoute: typeof StoryRouteImport
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/reservations': {
-      id: '/reservations'
-      path: '/reservations'
-      fullPath: '/reservations'
-      preLoaderRoute: typeof ReservationsRouteImport
+    '/membership': {
+      id: '/membership'
+      path: '/membership'
+      fullPath: '/membership'
+      preLoaderRoute: typeof MembershipRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/private-dining': {
-      id: '/private-dining'
-      path: '/private-dining'
-      fullPath: '/private-dining'
-      preLoaderRoute: typeof PrivateDiningRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/menu': {
-      id: '/menu'
-      path: '/menu'
-      fullPath: '/menu'
-      preLoaderRoute: typeof MenuRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events': {
@@ -185,6 +171,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/catalogue': {
+      id: '/catalogue'
+      path: '/catalogue'
+      fullPath: '/catalogue'
+      preLoaderRoute: typeof CatalogueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -197,24 +197,14 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  CatalogueRoute: CatalogueRoute,
   ContactRoute: ContactRoute,
   EventsRoute: EventsRoute,
-  GalleryRoute: GalleryRoute,
-  MenuRoute: MenuRoute,
-  PrivateDiningRoute: PrivateDiningRoute,
-  ReservationsRoute: ReservationsRoute,
-  StoryRoute: StoryRoute,
+  LoginRoute: LoginRoute,
+  MembershipRoute: MembershipRoute,
+  SupportRoute: SupportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}

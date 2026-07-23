@@ -1,83 +1,97 @@
-# The Old Library — Modern Redesign
+# The Old Library — Community Lending Library
 
-A high-fidelity visual mockup (not low-fi wireframe) of the full site, reimagined as a refined literary-cocktail destination. Emerald green + gold on warm cream, with editorial typography and generous whitespace.
+Pivot the existing site from a cocktail salon to a **community lending library**. Keep the emerald `#064e3b` + gold `#c9a84c` + cream `#f5f0e0` palette, Cormorant serif + Inter, arched frames, and gold dividers — the literary aesthetic still fits perfectly.
 
-## Design System
+## New site map
 
-- **Palette**: Deep emerald `#064e3b` (bg), rich green `#0d7a5f` (surfaces), antique gold `#c9a84c` (accent), cream `#f5f0e0` (text/light bg)
-- **Typography**: Cormorant / Playfair-style serif for display + headings; clean sans (Inter/DM Sans) for body & UI. Small-caps for eyebrows.
-- **Feel**: Emerald-prestige — leather-bound library meets modern speakeasy. Gold hairlines, arched frames, subtle grain texture, restrained motion (fade + slow parallax).
-- **Motif**: Arched book-spine frames for imagery, gold rule dividers, drop-cap intros.
-
-## Site Map (routes)
+Replaces the current 8 routes.
 
 ```text
-/                  Home
-/menu              Menu (food + drinks with tabs)
-/reservations      Reservations (booking form)
-/events            Events & live music
-/private-dining    Private dining / venue hire
-/gallery           Gallery
-/story             Our Story / About
-/contact           Contact & location
+/                Home
+/catalogue       Online Catalogue (browse/search books)
+/membership      Membership (tiers & join)
+/events          Events (kept, re-scoped to library programs)
+/support         Support the Library (donate / volunteer)
+/about           About Us
+/login           Member Login
+/contact         Contact & visit
 ```
 
-Shared: sticky translucent nav with logo mark, footer with hours/address/socials/newsletter.
+Routes to delete: `menu.tsx`, `reservations.tsx`, `private-dining.tsx`, `gallery.tsx`, `story.tsx` (Story content folded into About).
+Routes to add: `catalogue.tsx`, `membership.tsx`, `support.tsx`, `about.tsx`, `login.tsx`.
+Routes to rewrite: `index.tsx`, `events.tsx`, `contact.tsx`.
 
-## Page Content
+## Page content
 
-### Home
-- Full-bleed hero: dim library interior, serif headline "Where stories are poured", gold CTA "Reserve a table", secondary "Explore the menu"
-- Intro block with drop-cap paragraph + signature quote
-- Signature cocktails carousel (3 arched cards, gold frames)
-- Menu preview split: Kitchen / Bar with sample dishes
-- Live at the Library — upcoming events strip (3 cards, dates in gold)
-- Press / accolades marquee
-- Instagram-style gallery grid (6 tiles)
-- Reservation CTA band
+### Home (`/`)
+- Hero: warm library interior, headline "Where every family finds their next story", CTAs "Browse the catalogue" + "Become a member"
+- Intro with drop-cap: mission of the library, founding family note
+- "New on the shelves" — 4 arched book cards (cover, title, author, availability chip)
+- Collections strip: Children · Young Adult · Fiction · Non-fiction · Reference · Local History
+- Upcoming events (3 cards: Storytime, Book Club, Author Visit)
+- Membership CTA band
+- Support / donate teaser
+- Hours & visit block
 
-### Menu
-- Sticky category tabs: Small Plates · Mains · Desserts · Cocktails · Wine · Spirits
-- Two-column editorial list (name + price dot-leader, description, allergen chips)
-- Featured pairing callout every few sections
+### Online Catalogue (`/catalogue`)
+- Search bar (title / author / ISBN) — UI only
+- Filter sidebar: Category, Age group, Availability, Language
+- Grid of ~24 book cards with cover, title, author, "Available" / "On loan" chip, "Reserve" button (toast)
+- Pagination
 
-### Reservations
-- Split screen: left = booking form (date, time, party size, occasion, notes), right = hero image + policy notes
-- Confirmation states styled
+### Membership (`/membership`)
+- Three tiers in arched cards: Family · Individual · Student (annual fee, borrow limits, perks)
+- Comparison table
+- "How to join" 3-step flow
+- FAQ accordion
+- Join CTA → login/signup page
 
-### Events
-- Featured upcoming event hero
-- Chronological list with date blocks, genre tags (Jazz, Poetry, DJ)
-- "Host your event" cross-link
+### Events (`/events`)
+- Rewritten copy: Storytime, Book Clubs, Author Talks, Workshops, School Holiday programs
+- Date-block list with age-group tags (Kids, Teens, Adults, All ages) instead of Jazz/Poetry/DJ
+- Register-interest form
 
-### Private Dining
-- Hero + capacity stats (seated/standing/AV)
-- Three room cards with photo + specs
-- Inquiry form
+### Support the Library (`/support`)
+- Hero + mission statement
+- Three ways to give: Donate books · Financial contribution · Volunteer time
+- Impact stats (books lent, members, programs run)
+- Donation tier cards (Friend, Patron, Benefactor)
+- Volunteer sign-up form (UI only)
 
-### Gallery
-- Masonry grid, category filter (Interior · Food · Drinks · Nights)
-
-### Story
-- Long-form editorial: founding, chef, mixologist bios
+### About Us (`/about`)
+- Founding family story (long-form editorial, drop caps, pull quotes in gold)
 - Timeline of milestones
-- Pull-quotes in gold
+- Team: Head Librarian, Children's Librarian, Community Coordinator
+- Values / community pledge
 
-### Contact
-- Map, address, hours table, phone/email, socials, contact form
+### Login (`/login`)
+- Split screen: form left (email + password, "Remember me", "Forgot password"), hero image right
+- Tabs: Sign in / Join (signup fields: name, email, password, membership tier)
+- UI-only, no backend — submissions show toast. Marked in code for future Lovable Cloud wiring.
 
-## Technical Notes
+### Contact (`/contact`)
+- Map, address, hours table, phone/email, socials, contact form (kept largely as-is, copy tweaked)
 
-- TanStack Start file-based routes; one file per page under `src/routes/`
-- Each route sets its own `head()` (title, description, og:title/description, og:type=website, twitter:card). Leaf routes with a hero absolute image URL also set og:image + twitter:image.
-- Design tokens (emerald, gold, cream, radius, shadows, gradients) added to `src/styles.css` `:root` in oklch + registered in `@theme inline`. No hardcoded color utilities in components.
-- Fonts loaded via `<link>` in `__root.tsx` head (Cormorant Garamond + Inter). Family names referenced via `--font-*` tokens.
-- Reusable components in `src/components/`: `SiteNav`, `SiteFooter`, `SectionHeading`, `ArchedImage`, `GoldDivider`, `EventCard`, `MenuItem`, `ReservationForm`, `InquiryForm`.
-- shadcn primitives (Button, Input, Tabs, Select, Calendar) restyled via variants — no direct color overrides.
-- Images generated via imagegen (interior, cocktails, dishes, event, portraits) saved to `src/assets/` and imported as ES modules.
-- Replace placeholder `src/routes/index.tsx` with the new Home page.
-- Contact form and reservation form are UI-only (no backend) — submissions show a toast; note in code for future wiring.
+## Shared chrome updates
 
-## Out of Scope
+- `SiteNav` links → Catalogue, Membership, Events, Support, About, Contact; primary CTA button "Join" (→ `/membership`) instead of "Reserve"; secondary "Sign in" link → `/login`
+- `SiteFooter`: replace "Chapters" links, keep hours/address, add newsletter signup ("Monthly reading list"); remove bar-specific copy
+- All copy scrubbed of "cocktails / speakeasy / bar / kitchen / mixologist" — replaced with library language (shelves, collections, chapters, borrowing, members)
 
-- Backend / Lovable Cloud, real booking system, payment, CMS. Purely presentational mockup.
+## Visual system
+
+Unchanged: emerald/gold/cream tokens in `src/styles.css`, Cormorant + Inter fonts, arched image frames, gold hairline dividers, drop caps, small-caps eyebrows. Only imagery and copy change.
+
+## Imagery
+
+Regenerate/replace with library-appropriate images (imagegen, saved to `src/assets/`):
+- `hero-interior.jpg` → warm lending-library reading room with families
+- `books.jpg` → close-up of shelved books (keep if suitable, otherwise regenerate)
+- New: `children-corner.jpg`, `reading-room.jpg`, `librarian-portrait.jpg`, `event-storytime.jpg`, a set of 24 book-cover thumbnails for the catalogue (or one composite image reused)
+- Delete cocktail/dish images no longer referenced
+
+Per-route `head()` metadata rewritten with library-specific title/description/og tags. Home og:image points to the new hero.
+
+## Out of scope
+
+- Real catalogue backend, real auth, real payments/donations. All forms are UI-only with toast confirmations; comments in code flag where Lovable Cloud would wire in later.

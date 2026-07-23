@@ -14,14 +14,28 @@ export function SiteFooter() {
               <div>
                 <div className="font-serif text-cream text-lg">The Old Library</div>
                 <div className="text-[0.6rem] tracking-[0.3em] text-gold/70 uppercase mt-1">
-                  Dubai
+                  Family Lending Library
                 </div>
               </div>
             </div>
             <p className="mt-6 text-sm leading-relaxed text-cream/60 max-w-xs">
-              A literary cocktail salon where every drink begins with a story and every night
-              closes a chapter.
+              A community lending library for readers of every age — where every
+              family finds their next chapter.
             </p>
+
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="mt-6 flex items-center gap-2 border-b border-gold/30 pb-2"
+            >
+              <input
+                type="email"
+                placeholder="Monthly reading list"
+                className="flex-1 bg-transparent text-sm text-cream placeholder:text-cream/40 outline-none py-1"
+              />
+              <button className="text-gold text-xs tracking-[0.2em] uppercase hover:text-gold-soft">
+                Join
+              </button>
+            </form>
           </div>
 
           <div>
@@ -29,7 +43,7 @@ export function SiteFooter() {
             <ul className="space-y-3 text-sm">
               <li className="flex gap-3">
                 <MapPin size={14} className="mt-1 text-gold" />
-                Dubai Marina Walk<br />Dubai, UAE
+                12 Al Wasl Road<br />Jumeirah, Dubai, UAE
               </li>
               <li className="flex gap-3">
                 <Phone size={14} className="mt-1 text-gold" />
@@ -45,26 +59,27 @@ export function SiteFooter() {
           <div>
             <div className="eyebrow mb-5">Hours</div>
             <ul className="space-y-2 text-sm text-cream/70">
-              <li className="flex justify-between"><span>Sun – Thu</span><span>6pm – 1am</span></li>
-              <li className="flex justify-between"><span>Fri – Sat</span><span>6pm – 3am</span></li>
-              <li className="flex justify-between text-gold/90 pt-2"><span>Kitchen</span><span>until 11pm</span></li>
+              <li className="flex justify-between"><span>Mon – Fri</span><span>9am – 8pm</span></li>
+              <li className="flex justify-between"><span>Sat – Sun</span><span>10am – 6pm</span></li>
+              <li className="flex justify-between text-gold/90 pt-2"><span>Storytime</span><span>Sat 10:30am</span></li>
             </ul>
           </div>
 
           <div>
             <div className="eyebrow mb-5">Chapters</div>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/menu" className="hover:text-gold">Menu</Link></li>
-              <li><Link to="/reservations" className="hover:text-gold">Reservations</Link></li>
+              <li><Link to="/catalogue" className="hover:text-gold">Catalogue</Link></li>
+              <li><Link to="/membership" className="hover:text-gold">Membership</Link></li>
               <li><Link to="/events" className="hover:text-gold">Events</Link></li>
-              <li><Link to="/private-dining" className="hover:text-gold">Private Dining</Link></li>
-              <li><Link to="/story" className="hover:text-gold">Story</Link></li>
+              <li><Link to="/support" className="hover:text-gold">Support the Library</Link></li>
+              <li><Link to="/about" className="hover:text-gold">About Us</Link></li>
+              <li><Link to="/login" className="hover:text-gold">Member Login</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-cream/50">
-          <div>© {new Date().getFullYear()} The Old Library. All chapters reserved.</div>
+          <div>© {new Date().getFullYear()} The Old Library. All chapters welcome.</div>
           <div className="flex items-center gap-5">
             <a href="#" aria-label="Instagram" className="hover:text-gold"><Instagram size={16} /></a>
             <a href="#" aria-label="Facebook" className="hover:text-gold"><Facebook size={16} /></a>
