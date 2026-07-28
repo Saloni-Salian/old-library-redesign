@@ -1,6 +1,6 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { HandHelping, Mail } from "lucide-react";
+import { HandHelping, BookMarked, ArrowRight } from "lucide-react";
 import { PageShell, PageHeader } from "../components/PageShell";
 import shelvesImg from "../assets/shelves.jpg";
 
@@ -8,9 +8,9 @@ export const Route = createFileRoute("/support")({
   head: () => ({
     meta: [
       { title: "Support the Library — The Old Library" },
-      { name: "description", content: "Volunteer your time at our community lending library, and join the mailing list to hear when we're calling for book donations." },
+      { name: "description", content: "Support our community lending library by becoming a member or volunteering your time." },
       { property: "og:title", content: "Support the Library" },
-      { property: "og:description", content: "Volunteer with us, or join the list for our occasional donation drives." },
+      { property: "og:description", content: "Become a member or volunteer — the two ways to keep the shelves open." },
     ],
   }),
   component: Support,
@@ -25,15 +25,9 @@ const impact = [
 
 function Support() {
   const [sent, setSent] = useState(false);
-  const [listSent, setListSent] = useState(false);
-
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     setSent(true);
-  }
-  function onListSubmit(e: FormEvent) {
-    e.preventDefault();
-    setListSent(true);
   }
 
   return (
@@ -41,31 +35,47 @@ function Support() {
       <PageHeader
         eyebrow="Volume V"
         title="Support the Library"
-        intro="The Old Library runs on the hours our members give it. We don't rely on donations day-to-day — but a few times a year we call for specific books, and volunteers keep every shelf in order."
+        intro="The Old Library is kept open by the people who use it. There are two ways to keep the shelves stocked and the lamps lit — take out a membership, or give us a few hours of your week."
       />
 
       {/* TWO WAYS */}
       <section className="bg-cream py-24 px-6">
-        <div className="mx-auto max-w-5xl grid md:grid-cols-2 gap-12">
-          <div className="border-t border-gold pt-8">
+        <div className="mx-auto max-w-5xl grid md:grid-cols-2 gap-10">
+          {/* Become a member */}
+          <article className="bg-emerald-deep text-cream p-10 gold-frame flex flex-col">
+            <BookMarked className="text-gold" size={28} />
+            <div className="eyebrow text-gold mt-6">The best way to help</div>
+            <h3 className="display text-3xl mt-3 text-cream">Become a member</h3>
+            <p className="mt-4 text-cream/75 flex-1">
+              Every membership pays for new books, children's programming, and
+              the quiet hours in between. Family, Individual, and Student
+              tiers — start from AED 240 a year.
+            </p>
+            <Link
+              to="/membership"
+              className="mt-8 inline-flex items-center justify-center gap-2 bg-gold text-emerald-deep hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium"
+            >
+              View memberships <ArrowRight size={14} />
+            </Link>
+          </article>
+
+          {/* Volunteer */}
+          <article className="border border-border p-10 flex flex-col">
             <HandHelping className="text-gold" size={28} />
-            <h3 className="font-serif text-2xl mt-6 text-ink">Volunteer</h3>
-            <p className="mt-3 text-muted-foreground">
+            <div className="eyebrow mt-6">Give an hour</div>
+            <h3 className="display text-3xl mt-3 text-ink">Volunteer</h3>
+            <p className="mt-4 text-muted-foreground flex-1">
               Two hours a week is enough. Shelvers, storytime helpers,
               tea-makers, and Saturday hosts all welcome — no library
               experience needed.
             </p>
-          </div>
-          <div className="border-t border-gold pt-8">
-            <Mail className="text-gold" size={28} />
-            <h3 className="font-serif text-2xl mt-6 text-ink">Book donation list</h3>
-            <p className="mt-3 text-muted-foreground">
-              We don't accept book donations year-round — our shelves are
-              curated. Once or twice a year we send a short list of titles we're
-              looking for. Add your name and we'll write when the next call
-              goes out.
-            </p>
-          </div>
+            <a
+              href="#volunteer"
+              className="mt-8 inline-flex items-center justify-center gap-2 border border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-cream transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium"
+            >
+              Sign up below <ArrowRight size={14} />
+            </a>
+          </article>
         </div>
       </section>
 
@@ -84,42 +94,8 @@ function Support() {
         </div>
       </section>
 
-      {/* MAILING LIST */}
-      <section className="bg-cream py-24 px-6">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="eyebrow">Occasional letters</div>
-          <h2 className="display text-4xl md:text-5xl mt-4">Join the donation-call list</h2>
-          <p className="mt-4 text-muted-foreground">
-            A short email, only when we're looking for specific titles or
-            collections. No more than three or four times a year, and never
-            shared.
-          </p>
-
-          {listSent ? (
-            <p className="mt-10 font-serif text-2xl text-emerald-deep">
-              Thank you — you're on the list.
-            </p>
-          ) : (
-            <form
-              onSubmit={onListSubmit}
-              className="mt-10 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
-            >
-              <input
-                required
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 bg-transparent border-b border-emerald-deep/40 focus:border-gold outline-none py-3 text-ink placeholder:text-muted-foreground/60 text-center sm:text-left"
-              />
-              <button className="bg-emerald-deep text-cream hover:bg-emerald-deep/90 px-8 py-3 text-xs tracking-[0.25em] uppercase font-medium">
-                Join the list
-              </button>
-            </form>
-          )}
-        </div>
-      </section>
-
       {/* VOLUNTEER FORM */}
-      <section className="bg-emerald-deep text-cream py-24 px-6">
+      <section id="volunteer" className="bg-emerald-deep text-cream py-24 px-6 scroll-mt-24">
         <div className="mx-auto max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
