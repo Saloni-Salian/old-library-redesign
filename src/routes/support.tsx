@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { BookOpen, Heart, HandHelping } from "lucide-react";
+import { HandHelping, Mail } from "lucide-react";
 import { PageShell, PageHeader } from "../components/PageShell";
 import shelvesImg from "../assets/shelves.jpg";
 
@@ -8,25 +8,13 @@ export const Route = createFileRoute("/support")({
   head: () => ({
     meta: [
       { title: "Support the Library — The Old Library" },
-      { name: "description", content: "Three ways to give back to a non-profit lending library: donate books, contribute funds, or volunteer your time." },
+      { name: "description", content: "Volunteer your time at our community lending library, and join the mailing list to hear when we're calling for book donations." },
       { property: "og:title", content: "Support the Library" },
-      { property: "og:description", content: "Every book on our shelves was given." },
+      { property: "og:description", content: "Volunteer with us, or join the list for our occasional donation drives." },
     ],
   }),
   component: Support,
 });
-
-const ways = [
-  { icon: BookOpen, title: "Donate books", desc: "Drop off gently-loved books at the front desk any opening hour. We accept most titles for readers of all ages; anything we can't shelve goes to partner schools." },
-  { icon: Heart, title: "Give funds", desc: "One-off or monthly. Every dirham goes to new stock, children's programming, and keeping the reading room lamp-lit." },
-  { icon: HandHelping, title: "Volunteer", desc: "Two hours a week is enough. Shelvers, storytime helpers, tea-makers, and Saturday hosts all welcome." },
-];
-
-const tiers = [
-  { name: "Friend", price: "50", perks: ["A thank-you card", "Name in our annual list", "One free event ticket"] },
-  { name: "Patron", price: "500", perks: ["All Friend perks", "Two hardback dedications", "Invite to the annual dinner", "Reserved storytime seats"], featured: true },
-  { name: "Benefactor", price: "2,500", perks: ["All Patron perks", "A named shelf plaque", "Sponsor one children's programme", "Private tour of the archives"] },
-];
 
 const impact = [
   { n: "32,000", l: "Books on our shelves" },
@@ -37,9 +25,15 @@ const impact = [
 
 function Support() {
   const [sent, setSent] = useState(false);
+  const [listSent, setListSent] = useState(false);
+
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     setSent(true);
+  }
+  function onListSubmit(e: FormEvent) {
+    e.preventDefault();
+    setListSent(true);
   }
 
   return (
@@ -47,19 +41,31 @@ function Support() {
       <PageHeader
         eyebrow="Volume V"
         title="Support the Library"
-        intro="The Old Library is a non-profit. Every book on our shelves was given; every event we run was paid for by a member or a friend."
+        intro="The Old Library runs on the hours our members give it. We don't rely on donations day-to-day — but a few times a year we call for specific books, and volunteers keep every shelf in order."
       />
 
-      {/* THREE WAYS */}
+      {/* TWO WAYS */}
       <section className="bg-cream py-24 px-6">
-        <div className="mx-auto max-w-6xl grid md:grid-cols-3 gap-10">
-          {ways.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="border-t border-gold pt-8">
-              <Icon className="text-gold" size={28} />
-              <h3 className="font-serif text-2xl mt-6 text-ink">{title}</h3>
-              <p className="mt-3 text-muted-foreground">{desc}</p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-5xl grid md:grid-cols-2 gap-12">
+          <div className="border-t border-gold pt-8">
+            <HandHelping className="text-gold" size={28} />
+            <h3 className="font-serif text-2xl mt-6 text-ink">Volunteer</h3>
+            <p className="mt-3 text-muted-foreground">
+              Two hours a week is enough. Shelvers, storytime helpers,
+              tea-makers, and Saturday hosts all welcome — no library
+              experience needed.
+            </p>
+          </div>
+          <div className="border-t border-gold pt-8">
+            <Mail className="text-gold" size={28} />
+            <h3 className="font-serif text-2xl mt-6 text-ink">Book donation list</h3>
+            <p className="mt-3 text-muted-foreground">
+              We don't accept book donations year-round — our shelves are
+              curated. Once or twice a year we send a short list of titles we're
+              looking for. Add your name and we'll write when the next call
+              goes out.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -78,46 +84,37 @@ function Support() {
         </div>
       </section>
 
-      {/* DONATION TIERS */}
+      {/* MAILING LIST */}
       <section className="bg-cream py-24 px-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <div className="eyebrow">Give what you can</div>
-            <h2 className="display text-4xl md:text-5xl mt-4">Donation tiers</h2>
-            <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Suggested annual contributions — every amount is welcome and every amount is acknowledged.</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {tiers.map((t) => (
-              <article
-                key={t.name}
-                className={`p-10 flex flex-col ${
-                  t.featured ? "bg-emerald-deep text-cream gold-frame" : "bg-cream border border-border"
-                }`}
-              >
-                <div className={`eyebrow ${t.featured ? "text-gold" : ""}`}>{t.name}</div>
-                <div className="mt-6 flex items-baseline gap-2">
-                  <span className={`display text-5xl ${t.featured ? "text-cream" : "text-emerald-deep"}`}>{t.price}</span>
-                  <span className={`text-xs tracking-widest uppercase ${t.featured ? "text-cream/60" : "text-muted-foreground"}`}>AED / year</span>
-                </div>
-                <ul className={`mt-8 space-y-3 flex-1 ${t.featured ? "text-cream/85" : "text-muted-foreground"}`}>
-                  {t.perks.map((p) => (
-                    <li key={p} className="text-sm flex gap-2">
-                      <span className="text-gold">·</span> {p}
-                    </li>
-                  ))}
-                </ul>
-                <button
-                  className={`mt-10 py-4 text-xs tracking-[0.25em] uppercase font-medium ${
-                    t.featured
-                      ? "bg-gold text-emerald-deep hover:bg-gold-soft"
-                      : "border border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-cream"
-                  } transition-colors`}
-                >
-                  Give {t.name}
-                </button>
-              </article>
-            ))}
-          </div>
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="eyebrow">Occasional letters</div>
+          <h2 className="display text-4xl md:text-5xl mt-4">Join the donation-call list</h2>
+          <p className="mt-4 text-muted-foreground">
+            A short email, only when we're looking for specific titles or
+            collections. No more than three or four times a year, and never
+            shared.
+          </p>
+
+          {listSent ? (
+            <p className="mt-10 font-serif text-2xl text-emerald-deep">
+              Thank you — you're on the list.
+            </p>
+          ) : (
+            <form
+              onSubmit={onListSubmit}
+              className="mt-10 flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+            >
+              <input
+                required
+                type="email"
+                placeholder="your@email.com"
+                className="flex-1 bg-transparent border-b border-emerald-deep/40 focus:border-gold outline-none py-3 text-ink placeholder:text-muted-foreground/60 text-center sm:text-left"
+              />
+              <button className="bg-emerald-deep text-cream hover:bg-emerald-deep/90 px-8 py-3 text-xs tracking-[0.25em] uppercase font-medium">
+                Join the list
+              </button>
+            </form>
+          )}
         </div>
       </section>
 
