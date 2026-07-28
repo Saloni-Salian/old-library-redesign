@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
-import { HandHelping, BookMarked, ArrowRight } from "lucide-react";
+import { HandHelping, BookMarked, Mail, ArrowRight } from "lucide-react";
 import { PageShell, PageHeader } from "../components/PageShell";
 import shelvesImg from "../assets/shelves.jpg";
 
@@ -8,9 +8,9 @@ export const Route = createFileRoute("/support")({
   head: () => ({
     meta: [
       { title: "Support the Library — The Old Library" },
-      { name: "description", content: "Support our community lending library by becoming a member or volunteering your time." },
+      { name: "description", content: "Support our community lending library by becoming a member, volunteering your time, or joining the book-donation list." },
       { property: "og:title", content: "Support the Library" },
-      { property: "og:description", content: "Become a member or volunteer — the two ways to keep the shelves open." },
+      { property: "og:description", content: "Three ways to keep the shelves open — membership, volunteering, and our occasional book-donation call." },
     ],
   }),
   component: Support,
@@ -25,9 +25,15 @@ const impact = [
 
 function Support() {
   const [sent, setSent] = useState(false);
+  const [listSent, setListSent] = useState(false);
+
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     setSent(true);
+  }
+  function onListSubmit(e: FormEvent) {
+    e.preventDefault();
+    setListSent(true);
   }
 
   return (
@@ -35,12 +41,12 @@ function Support() {
       <PageHeader
         eyebrow="Volume V"
         title="Support the Library"
-        intro="The Old Library is kept open by the people who use it. There are two ways to keep the shelves stocked and the lamps lit — take out a membership, or give us a few hours of your week."
+        intro="The Old Library is kept open by the people who use it. Three ways to keep the shelves stocked and the lamps lit — take out a membership, give us a few hours of your week, or join the list for our occasional book-donation calls."
       />
 
-      {/* TWO WAYS */}
+      {/* THREE WAYS */}
       <section className="bg-cream py-24 px-6">
-        <div className="mx-auto max-w-5xl grid md:grid-cols-2 gap-10">
+        <div className="mx-auto max-w-6xl grid md:grid-cols-3 gap-8">
           {/* Become a member */}
           <article className="bg-emerald-deep text-cream p-10 gold-frame flex flex-col">
             <BookMarked className="text-gold" size={28} />
@@ -76,8 +82,40 @@ function Support() {
               Sign up below <ArrowRight size={14} />
             </a>
           </article>
+
+          {/* Book donation list */}
+          <article className="border border-border p-10 flex flex-col">
+            <Mail className="text-gold" size={28} />
+            <div className="eyebrow mt-6">Occasional letters</div>
+            <h3 className="display text-3xl mt-3 text-ink">Book donation list</h3>
+            <p className="mt-4 text-muted-foreground flex-1">
+              We don't accept book donations year-round — our shelves are
+              curated. A few times a year we send a short list of titles we're
+              looking for. Add your name and we'll write when the next call
+              goes out.
+            </p>
+            {listSent ? (
+              <p className="mt-8 font-serif text-lg text-emerald-deep">
+                Thank you — you're on the list.
+              </p>
+            ) : (
+              <form onSubmit={onListSubmit} className="mt-8 space-y-3">
+                <input
+                  required
+                  type="email"
+                  placeholder="your@email.com"
+                  className="w-full bg-transparent border-b border-emerald-deep/40 focus:border-gold outline-none py-2 text-ink placeholder:text-muted-foreground/60"
+                />
+                <button className="w-full border border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-cream transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                  Join the list
+                </button>
+              </form>
+            )}
+          </article>
         </div>
       </section>
+
+
 
       {/* IMPACT */}
       <section
