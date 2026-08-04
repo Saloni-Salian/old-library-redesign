@@ -31,7 +31,7 @@ function Login() {
         {/* IMAGE */}
         <div className="relative hidden md:block">
           <img src={heroImg} alt="The Old Library" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-emerald-deep/60" />
+          <div className="absolute inset-0 bg-cream/80" />
           <div className="relative h-full flex flex-col justify-end p-16 text-ink">
             <div className="eyebrow text-gold">Member Login</div>
             <h1 className="display text-5xl mt-6 text-ink leading-tight">

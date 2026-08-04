@@ -58,7 +58,7 @@ function Home() {
           height={1280}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-deep/70 via-emerald-deep/40 to-emerald-deep/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/80 via-cream/65 to-cream/95" />
 
         <div className="relative h-full flex flex-col justify-end pb-24 px-6">
           <div className="mx-auto max-w-6xl w-full">
@@ -81,7 +81,7 @@ function Home() {
                 </Link>
                 <Link
                   to="/membership"
-                  className="inline-flex items-center gap-3 px-8 py-4 border border-cream/40 text-ink hover:border-gold hover:text-gold text-xs tracking-[0.25em] uppercase transition-colors"
+                  className="inline-flex items-center gap-3 px-8 py-4 border border-ink/40 text-ink hover:border-gold hover:text-gold text-xs tracking-[0.25em] uppercase transition-colors"
                 >
                   Become a member
                 </Link>
@@ -251,7 +251,7 @@ function Home() {
       {/* MEMBERSHIP CTA BAND */}
       <section className="relative py-32 px-6 overflow-hidden">
         <img src={storytimeImg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-emerald-deep/88" />
+        <div className="absolute inset-0 bg-cream/85" />
         <div className="relative mx-auto max-w-5xl grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="eyebrow text-gold">Membership</div>
