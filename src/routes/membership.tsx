@@ -78,21 +78,21 @@ function Membership() {
               key={t.name}
               className={`p-10 flex flex-col ${
                 t.featured
-                  ? "bg-emerald-deep text-cream gold-frame relative"
+                  ? "bg-emerald-deep text-ink gold-frame relative"
                   : "bg-cream border border-border"
               }`}
             >
               {t.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-emerald-deep text-[0.6rem] tracking-[0.25em] uppercase px-3 py-1">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-ink text-[0.6rem] tracking-[0.25em] uppercase px-3 py-1">
                   Most Loved
                 </div>
               )}
               <div className={`eyebrow ${t.featured ? "text-gold" : ""}`}>{t.name}</div>
               <div className="mt-6 flex items-baseline gap-2">
-                <span className={`display text-6xl ${t.featured ? "text-cream" : "text-emerald-deep"}`}>
+                <span className={`display text-6xl ${t.featured ? "text-ink" : "text-ink"}`}>
                   {t.price}
                 </span>
-                <span className={`text-xs tracking-widest uppercase ${t.featured ? "text-cream/60" : "text-muted-foreground"}`}>
+                <span className={`text-xs tracking-widest uppercase ${t.featured ? "text-ink/60" : "text-muted-foreground"}`}>
                   {t.per}
                 </span>
               </div>
@@ -100,7 +100,7 @@ function Membership() {
                 Borrow up to {t.borrow}
               </div>
 
-              <ul className={`mt-8 space-y-3 flex-1 ${t.featured ? "text-cream/85" : "text-muted-foreground"}`}>
+              <ul className={`mt-8 space-y-3 flex-1 ${t.featured ? "text-ink/85" : "text-muted-foreground"}`}>
                 {t.perks.map((p) => (
                   <li key={p} className="flex items-start gap-3 text-sm">
                     <Check size={16} className="text-gold shrink-0 mt-0.5" />
@@ -113,8 +113,8 @@ function Membership() {
                 to="/login"
                 className={`mt-10 inline-flex justify-center items-center py-4 text-xs tracking-[0.25em] uppercase font-medium ${
                   t.featured
-                    ? "bg-gold text-emerald-deep hover:bg-gold-soft"
-                    : "border border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-cream"
+                    ? "bg-gold text-ink hover:bg-gold-soft"
+                    : "border border-ink text-ink hover:bg-ink hover:text-ink"
                 } transition-colors`}
               >
                 Join {t.name}
@@ -125,11 +125,11 @@ function Membership() {
       </section>
 
       {/* HOW TO JOIN */}
-      <section className="bg-emerald-deep text-cream py-24 px-6">
+      <section className="bg-emerald-deep text-ink py-24 px-6">
         <div className="mx-auto max-w-5xl">
           <div className="text-center mb-16">
             <div className="eyebrow">Three simple steps</div>
-            <h2 className="display text-4xl md:text-5xl text-cream mt-4">How to join</h2>
+            <h2 className="display text-4xl md:text-5xl text-ink mt-4">How to join</h2>
           </div>
           <ol className="grid md:grid-cols-3 gap-10">
             {[
@@ -140,7 +140,7 @@ function Membership() {
               <li key={s.n} className="border-t border-gold/30 pt-6">
                 <div className="display text-4xl text-gold">{s.n}</div>
                 <h3 className="font-serif text-2xl mt-3">{s.t}</h3>
-                <p className="mt-3 text-cream/70 text-sm">{s.d}</p>
+                <p className="mt-3 text-ink/70 text-sm">{s.d}</p>
               </li>
             ))}
           </ol>

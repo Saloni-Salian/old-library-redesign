@@ -33,13 +33,13 @@ function Login() {
         <div className="relative hidden md:block">
           <img src={heroImg} alt="The Old Library" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-emerald-deep/60" />
-          <div className="relative h-full flex flex-col justify-end p-16 text-cream">
+          <div className="relative h-full flex flex-col justify-end p-16 text-ink">
             <div className="eyebrow text-gold">Member Login</div>
-            <h1 className="display text-5xl mt-6 text-cream leading-tight">
+            <h1 className="display text-5xl mt-6 text-ink leading-tight">
               Welcome<br />
               <em className="text-gold not-italic">back to the shelves.</em>
             </h1>
-            <p className="mt-6 text-cream/70 max-w-sm">
+            <p className="mt-6 text-ink/70 max-w-sm">
               Sign in to reserve books, renew loans, and register for events.
               New here? Take a moment to join.
             </p>
@@ -56,8 +56,8 @@ function Login() {
                   onClick={() => setMode(m)}
                   className={`pb-4 text-xs tracking-[0.25em] uppercase border-b -mb-px transition-colors ${
                     mode === m
-                      ? "text-emerald-deep border-gold"
-                      : "text-muted-foreground border-transparent hover:text-emerald-deep"
+                      ? "text-ink border-gold"
+                      : "text-muted-foreground border-transparent hover:text-cream"
                   }`}
                 >
                   {m === "signin" ? "Sign in" : "Join"}
@@ -91,21 +91,21 @@ function Login() {
                   <label className="flex items-center gap-2 text-muted-foreground">
                     <input type="checkbox" className="accent-emerald-deep" /> Remember me
                   </label>
-                  <button type="button" className="text-gold hover:text-emerald-deep tracking-[0.15em] uppercase">
+                  <button type="button" className="text-gold hover:text-cream tracking-[0.15em] uppercase">
                     Forgot password?
                   </button>
                 </div>
               )}
 
-              <button className="w-full bg-emerald-deep text-cream hover:bg-emerald py-4 text-xs tracking-[0.25em] uppercase font-medium mt-4">
+              <button className="w-full bg-emerald-deep text-ink hover:bg-emerald py-4 text-xs tracking-[0.25em] uppercase font-medium mt-4">
                 {mode === "signin" ? "Sign in" : "Create account"}
               </button>
 
               <p className="text-xs text-muted-foreground text-center pt-4">
                 {mode === "signin" ? (
-                  <>New to the library? <button type="button" onClick={() => setMode("join")} className="text-emerald-deep border-b border-gold">Join here</button>.</>
+                  <>New to the library? <button type="button" onClick={() => setMode("join")} className="text-ink border-b border-gold">Join here</button>.</>
                 ) : (
-                  <>Already a member? <button type="button" onClick={() => setMode("signin")} className="text-emerald-deep border-b border-gold">Sign in</button>.</>
+                  <>Already a member? <button type="button" onClick={() => setMode("signin")} className="text-ink border-b border-gold">Sign in</button>.</>
                 )}
               </p>
             </form>
@@ -120,7 +120,7 @@ function Login() {
       </section>
 
       {toast && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-emerald-deep text-cream px-6 py-3 border border-gold/40 text-sm z-50 shadow-lg">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-emerald-deep text-ink px-6 py-3 border border-gold/40 text-sm z-50 shadow-lg">
           {toast}
         </div>
       )}

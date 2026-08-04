@@ -36,7 +36,7 @@ export function SiteNav() {
             <span className="font-serif text-gold text-lg leading-none">OL</span>
           </div>
           <div className="hidden sm:block">
-            <div className="font-serif text-cream text-lg leading-none">The Old Library</div>
+            <div className="font-serif text-ink text-lg leading-none">The Old Library</div>
             <div className="text-[0.6rem] tracking-[0.3em] text-gold/80 uppercase mt-1">
               Family Lending Library
             </div>
@@ -48,7 +48,7 @@ export function SiteNav() {
             <Link
               key={l.to}
               to={l.to}
-              className="text-cream/85 hover:text-gold text-sm tracking-wider uppercase transition-colors"
+              className="text-ink/85 hover:text-gold text-sm tracking-wider uppercase transition-colors"
               activeProps={{ className: "text-gold" }}
             >
               {l.label}
@@ -59,20 +59,20 @@ export function SiteNav() {
         <div className="flex items-center gap-3">
           <Link
             to="/login"
-            className="hidden md:inline-flex text-cream/85 hover:text-gold text-xs tracking-[0.2em] uppercase transition-colors"
+            className="hidden md:inline-flex text-ink/85 hover:text-gold text-xs tracking-[0.2em] uppercase transition-colors"
           >
             Sign in
           </Link>
           <Link
             to="/membership"
-            className="hidden md:inline-flex items-center px-5 py-2.5 border border-gold text-gold hover:bg-gold hover:text-emerald-deep text-xs tracking-[0.2em] uppercase transition-colors"
+            className="hidden md:inline-flex items-center px-5 py-2.5 border border-gold text-gold hover:bg-gold hover:text-cream text-xs tracking-[0.2em] uppercase transition-colors"
           >
             Join
           </Link>
           <button
             aria-label="Menu"
             onClick={() => setOpen(!open)}
-            className="lg:hidden text-cream p-2"
+            className="lg:hidden text-ink p-2"
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -86,7 +86,7 @@ export function SiteNav() {
               key={l.to}
               to={l.to}
               onClick={() => setOpen(false)}
-              className="block text-cream/90 hover:text-gold text-sm tracking-wider uppercase"
+              className="block text-ink/90 hover:text-gold text-sm tracking-wider uppercase"
             >
               {l.label}
             </Link>
@@ -94,7 +94,7 @@ export function SiteNav() {
           <Link
             to="/login"
             onClick={() => setOpen(false)}
-            className="block text-cream/80 hover:text-gold text-sm tracking-wider uppercase pt-4 border-t border-gold/20"
+            className="block text-ink/80 hover:text-gold text-sm tracking-wider uppercase pt-4 border-t border-gold/20"
           >
             Sign in
           </Link>

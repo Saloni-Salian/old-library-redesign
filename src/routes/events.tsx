@@ -26,7 +26,7 @@ const events = [
 
 const tagColor: Record<string, string> = {
   Kids: "text-gold border-gold/40",
-  Teens: "text-emerald-deep border-emerald-deep/40",
+  Teens: "text-ink border-ink/40",
   Adults: "text-ink border-border",
   "All ages": "text-gold border-gold/40",
 };
@@ -83,7 +83,7 @@ function Events() {
               <li key={e.title} className="grid md:grid-cols-[120px_1fr_auto] gap-6 md:gap-10 py-8 items-baseline">
                 <div className="flex items-baseline gap-3">
                   <span className="display text-5xl text-gold leading-none">{e.date}</span>
-                  <span className="font-serif text-lg text-emerald-deep uppercase tracking-widest">{e.month}</span>
+                  <span className="font-serif text-lg text-ink uppercase tracking-widest">{e.month}</span>
                 </div>
                 <div>
                   <div className="flex items-center gap-3 flex-wrap">
@@ -97,7 +97,7 @@ function Events() {
                   <h3 className="font-serif text-2xl mt-2 text-ink">{e.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground max-w-2xl">{e.desc}</p>
                 </div>
-                <button className="text-xs tracking-[0.2em] uppercase text-emerald-deep border-b border-gold pb-1 self-center whitespace-nowrap">
+                <button className="text-xs tracking-[0.2em] uppercase text-ink border-b border-gold pb-1 self-center whitespace-nowrap">
                   Register interest
                 </button>
               </li>
@@ -107,13 +107,13 @@ function Events() {
       </section>
 
       {/* REGISTER INTEREST */}
-      <section className="bg-emerald-deep text-cream py-24 px-6">
+      <section className="bg-emerald-deep text-ink py-24 px-6">
         <div className="mx-auto max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <div className="eyebrow">Stay in the loop</div>
-              <h2 className="display text-4xl md:text-5xl text-cream mt-4">Never miss a session.</h2>
-              <p className="mt-4 text-cream/70 max-w-md">
+              <h2 className="display text-4xl md:text-5xl text-ink mt-4">Never miss a session.</h2>
+              <p className="mt-4 text-ink/70 max-w-md">
                 One short email each month — this month's events, next month's
                 book club pick, and any new arrivals we think you'll like.
               </p>
@@ -121,7 +121,7 @@ function Events() {
             {sent ? (
               <div>
                 <div className="eyebrow text-gold">Subscribed</div>
-                <p className="font-serif text-2xl mt-4 text-cream">Thank you — the next dispatch goes out Sunday.</p>
+                <p className="font-serif text-2xl mt-4 text-ink">Thank you — the next dispatch goes out Sunday.</p>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-4">
@@ -133,7 +133,7 @@ function Events() {
                   <option>Teens only</option>
                   <option>Adults only</option>
                 </select>
-                <button className="w-full bg-gold text-emerald-deep hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                <button className="w-full bg-gold text-ink hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
                   Subscribe
                 </button>
                 <style>{`

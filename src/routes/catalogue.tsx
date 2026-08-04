@@ -96,7 +96,7 @@ function Catalogue() {
       <section className="bg-cream py-20 px-6">
         <div className="mx-auto max-w-7xl">
           {/* SEARCH */}
-          <div className="flex items-center gap-3 border-b-2 border-emerald-deep pb-4">
+          <div className="flex items-center gap-3 border-b-2 border-ink pb-4">
             <Search className="text-gold" size={22} />
             <input
               value={q}
@@ -117,7 +117,7 @@ function Catalogue() {
                       <button
                         onClick={() => setCat(v)}
                         className={`text-sm w-full text-left ${
-                          cat === v ? "text-emerald-deep border-b border-gold" : "text-muted-foreground hover:text-emerald-deep"
+                          cat === v ? "text-ink border-b border-gold" : "text-muted-foreground hover:text-cream"
                         }`}
                       >
                         {v}
@@ -135,7 +135,7 @@ function Catalogue() {
                       <button
                         onClick={() => setAge(v)}
                         className={`text-sm w-full text-left ${
-                          age === v ? "text-emerald-deep border-b border-gold" : "text-muted-foreground hover:text-emerald-deep"
+                          age === v ? "text-ink border-b border-gold" : "text-muted-foreground hover:text-cream"
                         }`}
                       >
                         {v}
@@ -185,7 +185,7 @@ function Catalogue() {
                         <span
                           className={`text-[0.6rem] tracking-[0.2em] uppercase px-1.5 py-0.5 border ${
                             b.available
-                              ? "text-emerald-deep border-emerald-deep/40"
+                              ? "text-ink border-ink/40"
                               : "text-muted-foreground border-border"
                           }`}
                         >
@@ -194,7 +194,7 @@ function Catalogue() {
                         <button
                           disabled={!b.available}
                           onClick={() => reserve(b.title)}
-                          className="text-xs tracking-[0.2em] uppercase text-gold hover:text-emerald-deep disabled:text-muted-foreground/50 disabled:cursor-not-allowed"
+                          className="text-xs tracking-[0.2em] uppercase text-gold hover:text-cream disabled:text-muted-foreground/50 disabled:cursor-not-allowed"
                         >
                           Reserve
                         </button>
@@ -214,9 +214,9 @@ function Catalogue() {
 
               {/* pagination — UI only */}
               <div className="mt-16 flex items-center justify-center gap-6 text-xs tracking-[0.2em] uppercase text-muted-foreground">
-                <button className="hover:text-emerald-deep">← Previous</button>
-                <span className="text-emerald-deep">Page 1 of 84</span>
-                <button className="hover:text-emerald-deep">Next →</button>
+                <button className="hover:text-cream">← Previous</button>
+                <span className="text-ink">Page 1 of 84</span>
+                <button className="hover:text-cream">Next →</button>
               </div>
             </div>
           </div>
@@ -224,7 +224,7 @@ function Catalogue() {
       </section>
 
       {toast && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-emerald-deep text-cream px-6 py-3 border border-gold/40 text-sm z-50 shadow-lg">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-emerald-deep text-ink px-6 py-3 border border-gold/40 text-sm z-50 shadow-lg">
           {toast}
         </div>
       )}

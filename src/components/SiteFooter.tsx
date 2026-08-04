@@ -3,7 +3,7 @@ import { Instagram, Facebook, Mail, MapPin, Phone } from "lucide-react";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-emerald-deep text-cream/85 pt-24 pb-10 border-t border-gold/20">
+    <footer className="bg-emerald-deep text-ink/85 pt-24 pb-10 border-t border-gold/20">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid md:grid-cols-4 gap-12 pb-16 border-b border-gold/15">
           <div className="md:col-span-1">
@@ -12,13 +12,13 @@ export function SiteFooter() {
                 <span className="font-serif text-gold text-lg">OL</span>
               </div>
               <div>
-                <div className="font-serif text-cream text-lg">The Old Library</div>
+                <div className="font-serif text-ink text-lg">The Old Library</div>
                 <div className="text-[0.6rem] tracking-[0.3em] text-gold/70 uppercase mt-1">
                   Family Lending Library
                 </div>
               </div>
             </div>
-            <p className="mt-6 text-sm leading-relaxed text-cream/60 max-w-xs">
+            <p className="mt-6 text-sm leading-relaxed text-ink/60 max-w-xs">
               A community lending library for readers of every age — where every
               family finds their next chapter.
             </p>
@@ -30,7 +30,7 @@ export function SiteFooter() {
               <input
                 type="email"
                 placeholder="Monthly reading list"
-                className="flex-1 bg-transparent text-sm text-cream placeholder:text-cream/40 outline-none py-1"
+                className="flex-1 bg-transparent text-sm text-ink placeholder:text-ink/40 outline-none py-1"
               />
               <button className="text-gold text-xs tracking-[0.2em] uppercase hover:text-gold-soft">
                 Join
@@ -58,7 +58,7 @@ export function SiteFooter() {
 
           <div>
             <div className="eyebrow mb-5">Hours</div>
-            <ul className="space-y-2 text-sm text-cream/70">
+            <ul className="space-y-2 text-sm text-ink/70">
               <li className="flex justify-between"><span>Mon – Fri</span><span>9am – 8pm</span></li>
               <li className="flex justify-between"><span>Sat – Sun</span><span>10am – 6pm</span></li>
               <li className="flex justify-between text-gold/90 pt-2"><span>Storytime</span><span>Sat 10:30am</span></li>
@@ -78,7 +78,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-cream/50">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-ink/50">
           <div>© {new Date().getFullYear()} The Old Library. All chapters welcome.</div>
           <div className="flex items-center gap-5">
             <a href="#" aria-label="Instagram" className="hover:text-gold"><Instagram size={16} /></a>
