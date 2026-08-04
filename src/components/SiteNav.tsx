@@ -63,12 +63,6 @@ export function SiteNav() {
           >
             Sign in
           </Link>
-          <Link
-            to="/membership"
-            className="hidden md:inline-flex items-center px-5 py-2.5 border border-gold text-gold hover:bg-gold hover:text-cream text-xs tracking-[0.2em] uppercase transition-colors"
-          >
-            Join
-          </Link>
           <button
             aria-label="Menu"
             onClick={() => setOpen(!open)}
