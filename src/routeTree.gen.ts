@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SupportRouteImport } from './routes/support'
+import { Route as NewslettersRouteImport } from './routes/newsletters'
 import { Route as MembershipRouteImport } from './routes/membership'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as EventsRouteImport } from './routes/events'
@@ -21,6 +22,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SupportRoute = SupportRouteImport.update({
   id: '/support',
   path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewslettersRoute = NewslettersRouteImport.update({
+  id: '/newsletters',
+  path: '/newsletters',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MembershipRoute = MembershipRouteImport.update({
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/events': typeof EventsRoute
   '/login': typeof LoginRoute
   '/membership': typeof MembershipRoute
+  '/newsletters': typeof NewslettersRoute
   '/support': typeof SupportRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/events': typeof EventsRoute
   '/login': typeof LoginRoute
   '/membership': typeof MembershipRoute
+  '/newsletters': typeof NewslettersRoute
   '/support': typeof SupportRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/events': typeof EventsRoute
   '/login': typeof LoginRoute
   '/membership': typeof MembershipRoute
+  '/newsletters': typeof NewslettersRoute
   '/support': typeof SupportRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/events'
     | '/login'
     | '/membership'
+    | '/newsletters'
     | '/support'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/events'
     | '/login'
     | '/membership'
+    | '/newsletters'
     | '/support'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/events'
     | '/login'
     | '/membership'
+    | '/newsletters'
     | '/support'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   EventsRoute: typeof EventsRoute
   LoginRoute: typeof LoginRoute
   MembershipRoute: typeof MembershipRoute
+  NewslettersRoute: typeof NewslettersRoute
   SupportRoute: typeof SupportRoute
 }
 
@@ -141,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/support'
       fullPath: '/support'
       preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/newsletters': {
+      id: '/newsletters'
+      path: '/newsletters'
+      fullPath: '/newsletters'
+      preLoaderRoute: typeof NewslettersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/membership': {
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   EventsRoute: EventsRoute,
   LoginRoute: LoginRoute,
   MembershipRoute: MembershipRoute,
+  NewslettersRoute: NewslettersRoute,
   SupportRoute: SupportRoute,
 }
 export const routeTree = rootRouteImport
