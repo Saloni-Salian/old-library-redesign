@@ -17,12 +17,11 @@ export const Route = createFileRoute("/login")({
 
 // NOTE: UI-only. Wire to Lovable Cloud auth in a later pass.
 function Login() {
-  const [mode, setMode] = useState<"signin" | "join">("signin");
   const [toast, setToast] = useState<string | null>(null);
 
   function onSubmit(e: FormEvent) {
     e.preventDefault();
-    setToast(mode === "signin" ? "Signed in — welcome back." : "Account created — check your inbox.");
+    setToast("Signed in — welcome back.");
     setTimeout(() => setToast(null), 2600);
   }
 
