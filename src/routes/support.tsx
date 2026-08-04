@@ -54,8 +54,8 @@ function Support() {
             <h3 className="display text-3xl mt-3 text-ink">Become a member</h3>
             <p className="mt-4 text-ink/75 flex-1">
               Every membership pays for new books, children's programming, and
-              the quiet hours in between. Family, Individual, and Student
-              tiers — start from AED 240 a year.
+              the quiet hours in between. One household membership, AED 200 a
+              year — signed up in person at the desk.
             </p>
             <Link
               to="/membership"

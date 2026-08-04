@@ -210,7 +210,7 @@ function Home() {
                 finish a chapter. Members welcome any hour we are open.
               </p>
               <Link to="/membership" className="mt-5 inline-flex items-center gap-2 text-ink border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
-                Join to visit <ArrowRight size={12} />
+                Membership details <ArrowRight size={12} />
               </Link>
             </div>
           </div>
@@ -259,15 +259,15 @@ function Home() {
               Borrow up to <em className="text-gold not-italic">eight books</em> at a time.
             </h2>
             <p className="mt-6 text-ink/75 max-w-md">
-              A single annual family membership covers every reader under one
-              roof — plus event access, reserved study time, and a monthly
-              hand-picked reading list.
+              One household membership at AED 200 a year covers every reader under
+              one roof — plus event access, reserved study time, and a monthly
+              hand-picked reading list. Sign up in person at the library.
             </p>
             <Link
               to="/membership"
               className="mt-10 inline-flex items-center gap-3 px-8 py-4 bg-gold text-cream hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium"
             >
-              See membership tiers <ArrowRight size={14} />
+              How to become a member <ArrowRight size={14} />
             </Link>
           </div>
           <ul className="space-y-6 text-ink">

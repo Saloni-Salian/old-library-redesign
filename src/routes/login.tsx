@@ -40,7 +40,7 @@ function Login() {
             </h1>
             <p className="mt-6 text-ink/70 max-w-sm">
               Sign in to reserve books, renew loans, and register for events.
-              New here? Take a moment to join.
+              New here? Come and see us at the library desk.
             </p>
           </div>
         </div>
