@@ -98,13 +98,6 @@ export function SiteNav() {
           >
             Sign in
           </Link>
-          <Link
-            to="/membership"
-            onClick={() => setOpen(false)}
-            className="block text-gold text-sm tracking-wider uppercase"
-          >
-            Join the Library
-          </Link>
         </div>
       )}
     </header>
