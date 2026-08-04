@@ -65,7 +65,7 @@ function About() {
 
           <div className="mt-12 flex items-start gap-4 border-l-2 border-gold pl-6">
             <Quote className="text-gold shrink-0 mt-1" size={20} />
-            <p className="italic font-serif text-2xl text-emerald-deep leading-tight">
+            <p className="italic font-serif text-2xl text-ink leading-tight">
               "A library is a house of second chances. Every borrowed book
               comes back a little more loved."
               <span className="not-italic text-xs tracking-[0.2em] uppercase text-gold/80 block mt-3">
@@ -77,19 +77,19 @@ function About() {
       </section>
 
       {/* TIMELINE */}
-      <section className="bg-emerald-deep text-cream py-24 px-6">
+      <section className="bg-emerald-deep text-ink py-24 px-6">
         <div className="mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <div className="eyebrow">Milestones</div>
-            <h2 className="display text-4xl md:text-5xl text-cream mt-4">Twelve years, one shelf at a time</h2>
+            <h2 className="display text-4xl md:text-5xl text-ink mt-4">Twelve years, one shelf at a time</h2>
           </div>
           <ol className="space-y-10">
             {timeline.map((t) => (
               <li key={t.year} className="grid md:grid-cols-[140px_1fr] gap-6 md:gap-10 border-b border-gold/20 pb-10">
                 <div className="display text-4xl text-gold">{t.year}</div>
                 <div>
-                  <h3 className="font-serif text-2xl text-cream">{t.t}</h3>
-                  <p className="mt-2 text-cream/70">{t.d}</p>
+                  <h3 className="font-serif text-2xl text-ink">{t.t}</h3>
+                  <p className="mt-2 text-ink/70">{t.d}</p>
                 </div>
               </li>
             ))}
@@ -123,7 +123,7 @@ function About() {
       <section className="bg-cream pb-32 px-6">
         <div className="mx-auto max-w-3xl text-center border-t border-b border-gold/40 py-16">
           <div className="eyebrow">Our Pledge</div>
-          <p className="font-serif italic text-2xl md:text-3xl mt-6 text-emerald-deep leading-tight">
+          <p className="font-serif italic text-2xl md:text-3xl mt-6 text-ink leading-tight">
             The Old Library will always be free to visit, gentle with late
             returns, and open to any reader who knocks.
           </p>

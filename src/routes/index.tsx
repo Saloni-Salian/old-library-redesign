@@ -58,30 +58,30 @@ function Home() {
           height={1280}
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-deep/70 via-emerald-deep/40 to-emerald-deep/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/35 via-cream/55 to-cream/92" />
 
         <div className="relative h-full flex flex-col justify-end pb-24 px-6">
           <div className="mx-auto max-w-6xl w-full">
             <div className="max-w-3xl">
               <div className="eyebrow mb-6 text-gold">Est. 2014 · Jumeirah, Dubai</div>
-              <h1 className="display text-cream text-6xl md:text-8xl lg:text-9xl">
+              <h1 className="display text-ink text-6xl md:text-8xl lg:text-9xl">
                 Where every family<br />
                 <em className="text-gold not-italic font-light">finds their story.</em>
               </h1>
-              <p className="mt-8 text-cream/75 max-w-xl text-lg leading-relaxed font-light">
+              <p className="mt-8 text-ink/75 max-w-xl text-lg leading-relaxed font-light">
                 A community lending library of thirty-two thousand books —
                 open to readers of every age, curated by hand, borrowed with love.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   to="/catalogue"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-emerald-deep hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium transition-colors"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-cream hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium transition-colors"
                 >
                   Browse the catalogue <ArrowRight size={14} />
                 </Link>
                 <Link
                   to="/membership"
-                  className="inline-flex items-center gap-3 px-8 py-4 border border-cream/40 text-cream hover:border-gold hover:text-gold text-xs tracking-[0.25em] uppercase transition-colors"
+                  className="inline-flex items-center gap-3 px-8 py-4 border border-ink/40 text-ink hover:border-gold hover:text-gold text-xs tracking-[0.25em] uppercase transition-colors"
                 >
                   Become a member
                 </Link>
@@ -90,7 +90,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-6 right-6 text-cream/50 text-[0.65rem] tracking-[0.3em] uppercase rotate-90 origin-bottom-right">
+        <div className="absolute bottom-6 right-6 text-ink/50 text-[0.65rem] tracking-[0.3em] uppercase rotate-90 origin-bottom-right">
           Chapter I · The Threshold
         </div>
       </section>
@@ -125,12 +125,12 @@ function Home() {
       </section>
 
       {/* NEW ARRIVALS */}
-      <section className="bg-emerald-deep text-cream py-32 px-6">
+      <section className="bg-emerald-deep text-ink py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
               <div className="eyebrow">Chapter II</div>
-              <h2 className="display text-5xl md:text-6xl text-cream mt-4">New on the Shelves</h2>
+              <h2 className="display text-5xl md:text-6xl text-ink mt-4">New on the Shelves</h2>
             </div>
             <Link to="/catalogue" className="text-gold hover:text-gold-soft text-xs tracking-[0.25em] uppercase flex items-center gap-2">
               Full catalogue <ArrowRight size={14} />
@@ -152,8 +152,8 @@ function Home() {
                   <div className="text-gold/70 text-xs tracking-[0.3em] uppercase">
                     №&nbsp;{String(i + 1).padStart(2, "0")} · {b.cat}
                   </div>
-                  <h3 className="font-serif text-2xl mt-2 text-cream">{b.title}</h3>
-                  <p className="text-cream/60 text-sm mt-1 italic">{b.author}</p>
+                  <h3 className="font-serif text-2xl mt-2 text-ink">{b.title}</h3>
+                  <p className="text-ink/60 text-sm mt-1 italic">{b.author}</p>
                   <div className="mt-3 text-[0.65rem] tracking-[0.25em] uppercase text-gold">
                     Available
                   </div>
@@ -174,7 +174,7 @@ function Home() {
               <Link
                 key={c}
                 to="/catalogue"
-                className="font-serif text-xl md:text-2xl text-emerald-deep hover:text-gold border-b border-transparent hover:border-gold pb-1 transition-colors"
+                className="font-serif text-xl md:text-2xl text-ink hover:text-gold border-b border-transparent hover:border-gold pb-1 transition-colors"
               >
                 {c}
               </Link>
@@ -195,7 +195,7 @@ function Home() {
                 Six thousand picture books, chapter books, and early readers —
                 sorted by age, not by algorithm.
               </p>
-              <Link to="/catalogue" className="mt-5 inline-flex items-center gap-2 text-emerald-deep border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
+              <Link to="/catalogue" className="mt-5 inline-flex items-center gap-2 text-ink border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
                 Browse children's <ArrowRight size={12} />
               </Link>
             </div>
@@ -209,8 +209,8 @@ function Home() {
                 Long tables, brass lamps, free wifi, and enough silence to
                 finish a chapter. Members welcome any hour we are open.
               </p>
-              <Link to="/membership" className="mt-5 inline-flex items-center gap-2 text-emerald-deep border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
-                Join to visit <ArrowRight size={12} />
+              <Link to="/membership" className="mt-5 inline-flex items-center gap-2 text-ink border-b border-gold pb-1 text-xs tracking-[0.2em] uppercase">
+                Membership details <ArrowRight size={12} />
               </Link>
             </div>
           </div>
@@ -218,12 +218,12 @@ function Home() {
       </section>
 
       {/* EVENTS */}
-      <section className="bg-ink text-cream py-32 px-6">
+      <section className="bg-emerald-deep text-ink py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
               <div className="eyebrow">Chapter III</div>
-              <h2 className="display text-5xl md:text-6xl mt-4 text-cream">This Month at the Library</h2>
+              <h2 className="display text-5xl md:text-6xl mt-4 text-ink">This Month at the Library</h2>
             </div>
             <Link to="/events" className="text-gold hover:text-gold-soft text-xs tracking-[0.25em] uppercase flex items-center gap-2">
               All events <ArrowRight size={14} />
@@ -232,14 +232,14 @@ function Home() {
 
           <div className="grid md:grid-cols-3 gap-px bg-gold/20">
             {events.map((e) => (
-              <div key={e.title} className="bg-ink p-10 hover:bg-emerald-deep transition-colors group">
+              <div key={e.title} className="bg-cream p-10 hover:bg-emerald transition-colors group">
                 <div className="flex items-baseline gap-3">
                   <span className="display text-6xl text-gold">{e.date}</span>
-                  <span className="font-serif text-xl text-cream/70 uppercase tracking-widest">{e.month}</span>
+                  <span className="font-serif text-xl text-ink/70 uppercase tracking-widest">{e.month}</span>
                 </div>
                 <div className="eyebrow mt-8">{e.tag}</div>
-                <h3 className="font-serif text-2xl mt-3 text-cream">{e.title}</h3>
-                <div className="mt-6 text-xs tracking-[0.25em] uppercase text-cream/50 group-hover:text-gold transition-colors">
+                <h3 className="font-serif text-2xl mt-3 text-ink">{e.title}</h3>
+                <div className="mt-6 text-xs tracking-[0.25em] uppercase text-ink/50 group-hover:text-gold transition-colors">
                   Free with membership
                 </div>
               </div>
@@ -251,26 +251,26 @@ function Home() {
       {/* MEMBERSHIP CTA BAND */}
       <section className="relative py-32 px-6 overflow-hidden">
         <img src={storytimeImg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-emerald-deep/88" />
+        <div className="absolute inset-0 bg-cream/85" />
         <div className="relative mx-auto max-w-5xl grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="eyebrow text-gold">Membership</div>
-            <h2 className="display text-5xl md:text-6xl text-cream mt-6">
+            <h2 className="display text-5xl md:text-6xl text-ink mt-6">
               Borrow up to <em className="text-gold not-italic">eight books</em> at a time.
             </h2>
-            <p className="mt-6 text-cream/75 max-w-md">
-              A single annual family membership covers every reader under one
-              roof — plus event access, reserved study time, and a monthly
-              hand-picked reading list.
+            <p className="mt-6 text-ink/75 max-w-md">
+              One household membership at AED 200 a year covers every reader under
+              one roof — plus event access, reserved study time, and a monthly
+              hand-picked reading list. Sign up in person at the library.
             </p>
             <Link
               to="/membership"
-              className="mt-10 inline-flex items-center gap-3 px-8 py-4 bg-gold text-emerald-deep hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium"
+              className="mt-10 inline-flex items-center gap-3 px-8 py-4 bg-gold text-cream hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium"
             >
-              See membership tiers <ArrowRight size={14} />
+              How to become a member <ArrowRight size={14} />
             </Link>
           </div>
-          <ul className="space-y-6 text-cream">
+          <ul className="space-y-6 text-ink">
             {[
               { icon: BookOpen, label: "32,000 books", note: "across eight collections" },
               { icon: Users, label: "Family membership", note: "one card for every reader in the household" },
@@ -281,7 +281,7 @@ function Home() {
                 <Icon className="text-gold shrink-0 mt-1" size={20} />
                 <div>
                   <div className="font-serif text-xl">{label}</div>
-                  <div className="text-cream/60 text-sm mt-1">{note}</div>
+                  <div className="text-ink/60 text-sm mt-1">{note}</div>
                 </div>
               </li>
             ))}
@@ -303,7 +303,7 @@ function Home() {
           </p>
           <Link
             to="/support"
-            className="mt-10 inline-flex items-center gap-3 px-8 py-4 border border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-cream text-xs tracking-[0.25em] uppercase transition-colors"
+            className="mt-10 inline-flex items-center gap-3 px-8 py-4 border border-ink text-ink hover:bg-ink hover:text-cream text-xs tracking-[0.25em] uppercase transition-colors"
           >
             Support the Library <ArrowRight size={14} />
           </Link>

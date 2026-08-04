@@ -17,14 +17,14 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-emerald-deep px-4">
       <div className="max-w-md text-center">
         <h1 className="display text-8xl text-gold">404</h1>
-        <h2 className="mt-4 text-xl text-cream">This page is not in our library</h2>
-        <p className="mt-2 text-sm text-cream/60">
+        <h2 className="mt-4 text-xl text-ink">This page is not in our library</h2>
+        <p className="mt-2 text-sm text-ink/60">
           The chapter you're looking for may have been moved or never written.
         </p>
         <div className="mt-8">
           <Link
             to="/"
-            className="inline-flex items-center px-6 py-3 border border-gold text-gold hover:bg-gold hover:text-emerald-deep text-xs tracking-[0.2em] uppercase transition-colors"
+            className="inline-flex items-center px-6 py-3 border border-gold text-gold hover:bg-gold hover:text-cream text-xs tracking-[0.2em] uppercase transition-colors"
           >
             Return home
           </Link>
@@ -44,20 +44,20 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-emerald-deep px-4">
       <div className="max-w-md text-center">
-        <h1 className="display text-3xl text-cream">Something went dim</h1>
-        <p className="mt-3 text-sm text-cream/60">
+        <h1 className="display text-3xl text-ink">Something went dim</h1>
+        <p className="mt-3 text-sm text-ink/60">
           Please try again — or head back to the entrance.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <button
             onClick={() => { router.invalidate(); reset(); }}
-            className="px-6 py-3 border border-gold text-gold hover:bg-gold hover:text-emerald-deep text-xs tracking-[0.2em] uppercase transition-colors"
+            className="px-6 py-3 border border-gold text-gold hover:bg-gold hover:text-cream text-xs tracking-[0.2em] uppercase transition-colors"
           >
             Try again
           </button>
           <a
             href="/"
-            className="px-6 py-3 border border-cream/30 text-cream hover:border-cream text-xs tracking-[0.2em] uppercase transition-colors"
+            className="px-6 py-3 border border-cream/30 text-ink hover:border-cream text-xs tracking-[0.2em] uppercase transition-colors"
           >
             Go home
           </a>

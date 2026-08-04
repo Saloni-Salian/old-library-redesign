@@ -52,8 +52,8 @@ function Contact() {
               <div className="eyebrow mb-4">Opening Hours</div>
               <table className="w-full text-sm">
                 <tbody className="divide-y divide-border/60">
-                  <tr><td className="py-2">Monday – Friday</td><td className="py-2 text-right text-emerald-deep">9:00 am – 8:00 pm</td></tr>
-                  <tr><td className="py-2">Saturday – Sunday</td><td className="py-2 text-right text-emerald-deep">10:00 am – 6:00 pm</td></tr>
+                  <tr><td className="py-2">Monday – Friday</td><td className="py-2 text-right text-ink">9:00 am – 8:00 pm</td></tr>
+                  <tr><td className="py-2">Saturday – Sunday</td><td className="py-2 text-right text-ink">10:00 am – 6:00 pm</td></tr>
                   <tr><td className="py-2">Saturday Storytime</td><td className="py-2 text-right text-gold">10:30 am</td></tr>
                   <tr><td className="py-2">Public holidays</td><td className="py-2 text-right text-muted-foreground">Closed</td></tr>
                 </tbody>
@@ -61,18 +61,18 @@ function Contact() {
             </div>
           </div>
 
-          <div className="bg-emerald-deep text-cream p-10">
+          <div className="bg-emerald-deep text-ink p-10">
             {sent ? (
               <div>
                 <div className="eyebrow text-gold">Sent</div>
-                <h3 className="display text-3xl mt-4 text-cream">Thank you for writing.</h3>
-                <p className="mt-4 text-cream/70">We'll reply within one working day.</p>
+                <h3 className="display text-3xl mt-4 text-ink">Thank you for writing.</h3>
+                <p className="mt-4 text-ink/70">We'll reply within one working day.</p>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-5">
                 <div>
                   <div className="eyebrow text-gold">Write to us</div>
-                  <h3 className="display text-3xl mt-3 text-cream">A note to the librarian.</h3>
+                  <h3 className="display text-3xl mt-3 text-ink">A note to the librarian.</h3>
                 </div>
                 <input required placeholder="Name" className="cinput" />
                 <input required type="email" placeholder="Email" className="cinput" />
@@ -85,7 +85,7 @@ function Contact() {
                   <option>Press</option>
                 </select>
                 <textarea rows={5} required placeholder="Your message" className="cinput resize-none" />
-                <button className="w-full bg-gold text-emerald-deep hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                <button className="w-full bg-gold text-cream hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
                   Send message
                 </button>
                 <style>{`

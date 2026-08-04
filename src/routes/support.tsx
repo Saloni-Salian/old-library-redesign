@@ -48,18 +48,18 @@ function Support() {
       <section className="bg-cream py-24 px-6">
         <div className="mx-auto max-w-6xl grid md:grid-cols-3 gap-8">
           {/* Become a member */}
-          <article className="bg-emerald-deep text-cream p-10 gold-frame flex flex-col">
+          <article className="bg-emerald-deep text-ink p-10 gold-frame flex flex-col">
             <BookMarked className="text-gold" size={28} />
             <div className="eyebrow text-gold mt-6">The best way to help</div>
-            <h3 className="display text-3xl mt-3 text-cream">Become a member</h3>
-            <p className="mt-4 text-cream/75 flex-1">
+            <h3 className="display text-3xl mt-3 text-ink">Become a member</h3>
+            <p className="mt-4 text-ink/75 flex-1">
               Every membership pays for new books, children's programming, and
-              the quiet hours in between. Family, Individual, and Student
-              tiers — start from AED 240 a year.
+              the quiet hours in between. One household membership, AED 200 a
+              year — signed up in person at the desk.
             </p>
             <Link
               to="/membership"
-              className="mt-8 inline-flex items-center justify-center gap-2 bg-gold text-emerald-deep hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium"
+              className="mt-8 inline-flex items-center justify-center gap-2 bg-gold text-cream hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium"
             >
               View memberships <ArrowRight size={14} />
             </Link>
@@ -77,7 +77,7 @@ function Support() {
             </p>
             <a
               href="#volunteer"
-              className="mt-8 inline-flex items-center justify-center gap-2 border border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-cream transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium"
+              className="mt-8 inline-flex items-center justify-center gap-2 border border-ink text-ink hover:bg-ink hover:text-cream transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium"
             >
               Sign up below <ArrowRight size={14} />
             </a>
@@ -95,7 +95,7 @@ function Support() {
               goes out.
             </p>
             {listSent ? (
-              <p className="mt-8 font-serif text-lg text-emerald-deep">
+              <p className="mt-8 font-serif text-lg text-ink">
                 Thank you — you're on the list.
               </p>
             ) : (
@@ -104,9 +104,9 @@ function Support() {
                   required
                   type="email"
                   placeholder="your@email.com"
-                  className="w-full bg-transparent border-b border-emerald-deep/40 focus:border-gold outline-none py-2 text-ink placeholder:text-muted-foreground/60"
+                  className="w-full bg-transparent border-b border-ink/40 focus:border-gold outline-none py-2 text-ink placeholder:text-muted-foreground/60"
                 />
-                <button className="w-full border border-emerald-deep text-emerald-deep hover:bg-emerald-deep hover:text-cream transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                <button className="w-full border border-ink text-ink hover:bg-ink hover:text-cream transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium">
                   Join the list
                 </button>
               </form>
@@ -122,24 +122,24 @@ function Support() {
         className="relative py-24 px-6"
         style={{ backgroundImage: `linear-gradient(rgba(6,78,59,0.9), rgba(6,78,59,0.9)), url(${shelvesImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
       >
-        <div className="mx-auto max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-y-12 text-cream text-center">
+        <div className="mx-auto max-w-5xl grid grid-cols-2 md:grid-cols-4 gap-y-12 text-ink text-center">
           {impact.map((s) => (
             <div key={s.l}>
               <div className="display text-5xl md:text-6xl text-gold">{s.n}</div>
-              <div className="mt-3 eyebrow text-cream/80">{s.l}</div>
+              <div className="mt-3 eyebrow text-ink/80">{s.l}</div>
             </div>
           ))}
         </div>
       </section>
 
       {/* VOLUNTEER FORM */}
-      <section id="volunteer" className="bg-emerald-deep text-cream py-24 px-6 scroll-mt-24">
+      <section id="volunteer" className="bg-emerald-deep text-ink py-24 px-6 scroll-mt-24">
         <div className="mx-auto max-w-4xl">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
               <div className="eyebrow">Volunteer</div>
-              <h2 className="display text-4xl md:text-5xl text-cream mt-4">Give an hour, or two.</h2>
-              <p className="mt-4 text-cream/70 max-w-md">
+              <h2 className="display text-4xl md:text-5xl text-ink mt-4">Give an hour, or two.</h2>
+              <p className="mt-4 text-ink/70 max-w-md">
                 Tell us a little about you and how you'd like to help. We'll
                 write back within a week with the next volunteer induction.
               </p>
@@ -147,7 +147,7 @@ function Support() {
             {sent ? (
               <div>
                 <div className="eyebrow text-gold">Received</div>
-                <p className="font-serif text-2xl mt-4 text-cream">Thank you — we'll be in touch soon.</p>
+                <p className="font-serif text-2xl mt-4 text-ink">Thank you — we'll be in touch soon.</p>
               </div>
             ) : (
               <form onSubmit={onSubmit} className="space-y-4">
@@ -162,7 +162,7 @@ function Support() {
                   <option>Anything you need</option>
                 </select>
                 <textarea rows={4} className="vinput resize-none" placeholder="A little about you (optional)" />
-                <button className="w-full bg-gold text-emerald-deep hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                <button className="w-full bg-gold text-cream hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
                   Sign up to volunteer
                 </button>
                 <style>{`
