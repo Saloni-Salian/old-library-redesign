@@ -218,7 +218,7 @@ function Home() {
       </section>
 
       {/* EVENTS */}
-      <section className="bg-ink text-cream py-32 px-6">
+      <section className="bg-emerald-deep text-ink py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -232,7 +232,7 @@ function Home() {
 
           <div className="grid md:grid-cols-3 gap-px bg-gold/20">
             {events.map((e) => (
-              <div key={e.title} className="bg-ink p-10 hover:bg-ink transition-colors group">
+              <div key={e.title} className="bg-cream p-10 hover:bg-emerald transition-colors group">
                 <div className="flex items-baseline gap-3">
                   <span className="display text-6xl text-gold">{e.date}</span>
                   <span className="font-serif text-xl text-ink/70 uppercase tracking-widest">{e.month}</span>
