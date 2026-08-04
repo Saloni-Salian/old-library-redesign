@@ -49,66 +49,35 @@ function Login() {
         {/* FORM */}
         <div className="bg-cream flex items-center px-6 md:px-16 py-16">
           <div className="w-full max-w-md mx-auto">
-            <div className="flex gap-8 border-b border-border mb-10">
-              {(["signin", "join"] as const).map((m) => (
-                <button
-                  key={m}
-                  onClick={() => setMode(m)}
-                  className={`pb-4 text-xs tracking-[0.25em] uppercase border-b -mb-px transition-colors ${
-                    mode === m
-                      ? "text-ink border-gold"
-                      : "text-muted-foreground border-transparent hover:text-cream"
-                  }`}
-                >
-                  {m === "signin" ? "Sign in" : "Join"}
-                </button>
-              ))}
-            </div>
-
-            <h2 className="display text-3xl mb-8">
-              {mode === "signin" ? "Sign in to your account" : "Create your library account"}
-            </h2>
+            <h2 className="display text-3xl mb-8">Sign in to your account</h2>
 
             <form onSubmit={onSubmit} className="space-y-5">
-              {mode === "join" && (
-                <Field label="Full name" type="text" required placeholder="Amina Al-Sayed" />
-              )}
               <Field label="Email" type="email" required placeholder="you@example.ae" />
               <Field label="Password" type="password" required placeholder="••••••••" />
-              {mode === "join" && (
-                <div>
-                  <label className="eyebrow block mb-3">Membership tier</label>
-                  <select className="linput" defaultValue="family">
-                    <option value="family">Family — 420 AED / year</option>
-                    <option value="individual">Individual — 240 AED / year</option>
-                    <option value="student">Student — 120 AED / year</option>
-                  </select>
-                </div>
-              )}
 
-              {mode === "signin" && (
-                <div className="flex items-center justify-between text-xs">
-                  <label className="flex items-center gap-2 text-muted-foreground">
-                    <input type="checkbox" className="accent-emerald-deep" /> Remember me
-                  </label>
-                  <button type="button" className="text-gold hover:text-cream tracking-[0.15em] uppercase">
-                    Forgot password?
-                  </button>
-                </div>
-              )}
+              <div className="flex items-center justify-between text-xs">
+                <label className="flex items-center gap-2 text-muted-foreground">
+                  <input type="checkbox" className="accent-gold" /> Remember me
+                </label>
+                <button type="button" className="text-gold hover:text-gold-soft tracking-[0.15em] uppercase">
+                  Forgot password?
+                </button>
+              </div>
 
-              <button className="w-full bg-emerald-deep text-ink hover:bg-emerald py-4 text-xs tracking-[0.25em] uppercase font-medium mt-4">
-                {mode === "signin" ? "Sign in" : "Create account"}
+              <button className="w-full bg-gold text-cream hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium mt-4">
+                Sign in
               </button>
 
-              <p className="text-xs text-muted-foreground text-center pt-4">
-                {mode === "signin" ? (
-                  <>New to the library? <button type="button" onClick={() => setMode("join")} className="text-ink border-b border-gold">Join here</button>.</>
-                ) : (
-                  <>Already a member? <button type="button" onClick={() => setMode("signin")} className="text-ink border-b border-gold">Sign in</button>.</>
-                )}
+              <p className="text-xs text-muted-foreground text-center pt-4 leading-relaxed">
+                Not a member yet? Memberships are arranged in person at the library
+                desk — AED 200 for the year.{" "}
+                <Link to="/membership" className="text-ink border-b border-gold">
+                  How to join
+                </Link>
+                .
               </p>
             </form>
+
 
             <style>{`
               .linput{width:100%;background:transparent;border:none;border-bottom:1px solid var(--color-border);padding:10px 0;font-family:var(--font-sans);outline:none;color:var(--color-ink);font-size:0.95rem;}
