@@ -59,7 +59,7 @@ function Support() {
             </p>
             <Link
               to="/membership"
-              className="mt-8 inline-flex items-center justify-center gap-2 bg-gold text-ink hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium"
+              className="mt-8 inline-flex items-center justify-center gap-2 bg-gold text-cream hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium"
             >
               View memberships <ArrowRight size={14} />
             </Link>
@@ -77,7 +77,7 @@ function Support() {
             </p>
             <a
               href="#volunteer"
-              className="mt-8 inline-flex items-center justify-center gap-2 border border-ink text-ink hover:bg-ink hover:text-ink transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium"
+              className="mt-8 inline-flex items-center justify-center gap-2 border border-ink text-ink hover:bg-ink hover:text-cream transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium"
             >
               Sign up below <ArrowRight size={14} />
             </a>
@@ -106,7 +106,7 @@ function Support() {
                   placeholder="your@email.com"
                   className="w-full bg-transparent border-b border-ink/40 focus:border-gold outline-none py-2 text-ink placeholder:text-muted-foreground/60"
                 />
-                <button className="w-full border border-ink text-ink hover:bg-ink hover:text-ink transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                <button className="w-full border border-ink text-ink hover:bg-ink hover:text-cream transition-colors py-4 text-xs tracking-[0.25em] uppercase font-medium">
                   Join the list
                 </button>
               </form>
@@ -162,7 +162,7 @@ function Support() {
                   <option>Anything you need</option>
                 </select>
                 <textarea rows={4} className="vinput resize-none" placeholder="A little about you (optional)" />
-                <button className="w-full bg-gold text-ink hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                <button className="w-full bg-gold text-cream hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
                   Sign up to volunteer
                 </button>
                 <style>{`

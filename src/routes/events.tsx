@@ -133,7 +133,7 @@ function Events() {
                   <option>Teens only</option>
                   <option>Adults only</option>
                 </select>
-                <button className="w-full bg-gold text-ink hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                <button className="w-full bg-gold text-cream hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
                   Subscribe
                 </button>
                 <style>{`

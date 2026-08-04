@@ -75,7 +75,7 @@ function Home() {
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link
                   to="/catalogue"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-ink hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium transition-colors"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gold text-cream hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium transition-colors"
                 >
                   Browse the catalogue <ArrowRight size={14} />
                 </Link>
@@ -218,7 +218,7 @@ function Home() {
       </section>
 
       {/* EVENTS */}
-      <section className="bg-ink text-ink py-32 px-6">
+      <section className="bg-ink text-cream py-32 px-6">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -265,7 +265,7 @@ function Home() {
             </p>
             <Link
               to="/membership"
-              className="mt-10 inline-flex items-center gap-3 px-8 py-4 bg-gold text-ink hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium"
+              className="mt-10 inline-flex items-center gap-3 px-8 py-4 bg-gold text-cream hover:bg-gold-soft text-xs tracking-[0.25em] uppercase font-medium"
             >
               See membership tiers <ArrowRight size={14} />
             </Link>
@@ -303,7 +303,7 @@ function Home() {
           </p>
           <Link
             to="/support"
-            className="mt-10 inline-flex items-center gap-3 px-8 py-4 border border-ink text-ink hover:bg-ink hover:text-ink text-xs tracking-[0.25em] uppercase transition-colors"
+            className="mt-10 inline-flex items-center gap-3 px-8 py-4 border border-ink text-ink hover:bg-ink hover:text-cream text-xs tracking-[0.25em] uppercase transition-colors"
           >
             Support the Library <ArrowRight size={14} />
           </Link>

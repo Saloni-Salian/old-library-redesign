@@ -85,7 +85,7 @@ function Contact() {
                   <option>Press</option>
                 </select>
                 <textarea rows={5} required placeholder="Your message" className="cinput resize-none" />
-                <button className="w-full bg-gold text-ink hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
+                <button className="w-full bg-gold text-cream hover:bg-gold-soft py-4 text-xs tracking-[0.25em] uppercase font-medium">
                   Send message
                 </button>
                 <style>{`
