@@ -45,33 +45,33 @@
 :root {
   --radius: 0.25rem;
 
-  /* Brand palette — light sage & garden green */
-  --emerald-deep: oklch(0.94 0.032 165);
-  --emerald: oklch(0.9 0.045 168);
-  --emerald-soft: oklch(0.83 0.055 170);
-  --gold: oklch(0.5 0.095 168);
-  --gold-soft: oklch(0.42 0.085 168);
-  --cream: oklch(0.99 0.008 160);
-  --ink: oklch(0.25 0.035 168);
+  /* Brand palette — warm terracotta & sage */
+  --emerald-deep: #e9eee0;
+  --emerald: #dfe6d2;
+  --emerald-soft: #c9d6ba;
+  --gold: #c4654a;
+  --gold-soft: #a8523b;
+  --cream: #faf7f1;
+  --ink: #3d3a30;
 
   --background: var(--cream);
   --foreground: var(--ink);
-  --card: oklch(0.975 0.012 165);
+  --card: #fdfbf7;
   --card-foreground: var(--ink);
   --popover: var(--cream);
   --popover-foreground: var(--ink);
   --primary: var(--gold);
-  --primary-foreground: var(--cream);
-  --secondary: oklch(0.93 0.025 165);
+  --primary-foreground: #faf7f1;
+  --secondary: #f1ede4;
   --secondary-foreground: var(--ink);
-  --muted: oklch(0.94 0.018 165);
-  --muted-foreground: oklch(0.48 0.025 168);
+  --muted: #f3efe7;
+  --muted-foreground: #7d7264;
   --accent: var(--gold);
-  --accent-foreground: var(--cream);
+  --accent-foreground: #faf7f1;
   --destructive: oklch(0.55 0.2 27);
   --destructive-foreground: var(--cream);
-  --border: oklch(0.88 0.02 165);
-  --input: oklch(0.88 0.02 165);
+  --border: #e3dccd;
+  --input: #e3dccd;
   --ring: var(--gold);
 }
 
