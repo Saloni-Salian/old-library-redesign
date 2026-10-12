@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, Users, Calendar, Heart, Quote } from "lucide-react";
-import heroImg from "../assets/hero-library.jpg";
 import childrenImg from "../assets/children-corner.jpg";
 import readingRoomImg from "../assets/reading-room.jpg";
-import storytimeImg from "../assets/event-storytime.jpg";
 import shelvesImg from "../assets/shelves.jpg";
 import librarianImg from "../assets/librarian-portrait.jpg";
 import { PageShell } from "../components/PageShell";
@@ -49,21 +47,19 @@ const events = [
 function Home() {
   return (
     <PageShell>
-      {/* HERO */}
-      <section className="relative h-screen min-h-[720px] overflow-hidden">
-        <img
-          src={heroImg}
-          alt="Inside The Old Library"
-          width={1920}
-          height={1280}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/35 via-cream/55 to-cream/92" />
+      {/* HERO — plain, textured background */}
+      <section className="relative min-h-[85vh] flex items-end overflow-hidden bg-cream">
+        {/* subtle textures */}
+        <div className="absolute inset-0 texture-dots" aria-hidden="true" />
+        <div className="absolute inset-0 texture-lines" aria-hidden="true" />
+        <div className="absolute -top-40 -right-40 w-[44rem] h-[44rem] rounded-full bg-emerald-soft/50 blur-3xl" aria-hidden="true" />
+        <div className="absolute -bottom-48 -left-40 w-[36rem] h-[36rem] rounded-full bg-emerald/60 blur-3xl" aria-hidden="true" />
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gold/25" aria-hidden="true" />
 
-        <div className="relative h-full flex flex-col justify-end pb-24 px-6">
+        <div className="relative w-full pb-28 pt-40 px-6">
           <div className="mx-auto max-w-6xl w-full">
             <div className="max-w-3xl">
-              <div className="eyebrow mb-6 text-gold">Est. 2014 · Jumeirah, Dubai</div>
+              <div className="eyebrow mb-6">Est. 2014 · Jumeirah, Dubai</div>
               <h1 className="display text-ink text-6xl md:text-8xl lg:text-9xl">
                 Where every family<br />
                 <em className="text-gold not-italic font-light">finds their story.</em>
@@ -90,7 +86,7 @@ function Home() {
           </div>
         </div>
 
-        <div className="absolute bottom-6 right-6 text-ink/50 text-[0.65rem] tracking-[0.3em] uppercase rotate-90 origin-bottom-right">
+        <div className="absolute bottom-6 right-6 text-ink/50 text-[0.65rem] tracking-[0.3em] uppercase rotate-90 origin-bottom-right hidden md:block">
           Chapter I · The Threshold
         </div>
       </section>
@@ -249,9 +245,9 @@ function Home() {
       </section>
 
       {/* MEMBERSHIP CTA BAND */}
-      <section className="relative py-32 px-6 overflow-hidden">
-        <img src={storytimeImg} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
-        <div className="absolute inset-0 bg-cream/85" />
+      <section className="relative py-32 px-6 overflow-hidden bg-emerald-deep">
+        <div className="absolute inset-0 texture-dots" aria-hidden="true" />
+        <div className="absolute -top-32 right-0 w-[30rem] h-[30rem] rounded-full bg-emerald-soft/60 blur-3xl" aria-hidden="true" />
         <div className="relative mx-auto max-w-5xl grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="eyebrow text-gold">Membership</div>

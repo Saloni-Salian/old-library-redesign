@@ -34,7 +34,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: { error: unknown; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -72,10 +72,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "The Old Library — Literary Cocktail Salon, Dubai" },
-      { name: "description", content: "A dim-lit sanctuary in Dubai where every cocktail begins with a story. Award-winning bar, kitchen, and live music." },
-      { property: "og:title", content: "The Old Library — Literary Cocktail Salon, Dubai" },
-      { property: "og:description", content: "A dim-lit sanctuary in Dubai where every cocktail begins with a story." },
+      { title: "The Old Library — Family Lending Library, Dubai" },
+      { name: "description", content: "A community lending library in Jumeirah, Dubai. 32,000 books for readers of every age, family memberships, and Saturday storytime." },
+      { property: "og:title", content: "The Old Library — Family Lending Library" },
+      { property: "og:description", content: "Where every family finds their story." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
