@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, BookOpen, Users, Calendar, Heart, Quote } from "lucide-react";
-import heroImg from "../assets/hero-library.jpg";
 import childrenImg from "../assets/children-corner.jpg";
 import readingRoomImg from "../assets/reading-room.jpg";
-import storytimeImg from "../assets/event-storytime.jpg";
 import shelvesImg from "../assets/shelves.jpg";
 import librarianImg from "../assets/librarian-portrait.jpg";
 import { PageShell } from "../components/PageShell";
